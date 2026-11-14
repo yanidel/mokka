@@ -35,6 +35,9 @@ El logo SVG está trazado directamente desde la imagen de Mokka compartida en la
 - styles.css — estilos, diseño y breakpoints
 - app.js — catálogo de ejemplo, filtro por marcas/preferencias, búsqueda y carrito
 - assets/mokka-logo.svg — logotipo Mokka
+- assets/brands/zafarrancho/alfajor.avif — fotografía ilustrativa optimizada de Zafarrancho
+- assets/brands/santafesino/alfajor.avif — fotografía ilustrativa optimizada del estilo santafesino
+- assets/brands/saboree/alfajores.avif — fotografía ilustrativa optimizada de Saborée
 
 ## Migración posterior a Tiendanube
 
@@ -49,3 +52,7 @@ Para llevarlo a Tiendanube:
 6. Rehacer pruebas de responsive, accesibilidad, rendimiento y compra real en staging.
 
 No hay credenciales, tokens ni integraciones de pago en este repositorio.
+
+## Imágenes nuevas (noviembre 2026)
+
+Las tres fotografías de marca son **imágenes de producto generadas y retocadas con IA** a partir de las referencias facilitadas por el usuario, conservando un fondo beige consistente y sin texto. Se cargan como archivos AVIF separados por marca/estilo y están optimizadas como **miniaturas de 300 × 300 px** para navegación rápida. Antes de utilizarlas para vender un producto específico, comprobar que tamaño, textura, ingredientes y presentación coincidan con el artículo real y sustituir por fotos de mayor resolución donde corresponda.
