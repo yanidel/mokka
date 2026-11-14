@@ -4,15 +4,20 @@
 const IMG_A="https://images.unsplash.com/photo-1648821994613-6fdbad6657ba?auto=format&fit=crop&w=950&q=85";
 const IMG_B="https://images.unsplash.com/photo-1690988109082-893ae8bfff4c?auto=format&fit=crop&w=950&q=85";
 const IMG_C="https://images.unsplash.com/photo-1757522744922-1708afba3917?auto=format&fit=crop&w=950&q=85";
+const IMG_ZAF="assets/brands/zafarrancho/alfajor.avif";
+const IMG_SANTA="assets/brands/santafesino/alfajor.avif";
+const IMG_SABO="assets/brands/saboree/alfajores.avif";
 const products=[
   {id:"m1",brand:"Merengo",name:"Clásico de chocolate",description:"Chocolate y dulce de leche, una combinación irresistible.",price:5900,img:IMG_A,position:"50% 45%",tags:["chocolate","relleno","esponjoso"],sticker:"Un clásico"},
-  {id:"z1",brand:"Zafarrancho",name:"Tentación de dulce de leche",description:"Para los fanáticos del relleno generoso.",price:6400,img:IMG_B,position:"50% 50%",tags:["relleno","chocolate"],sticker:"Mucho relleno"},
+  {id:"z1",brand:"Zafarrancho",name:"Tentación de dulce de leche",description:"Para los fanáticos del relleno generoso.",price:6400,img:IMG_ZAF,position:"50% 50%",tags:["relleno","chocolate"],sticker:"Mucho relleno"},
   {id:"q1",brand:"La Quinta",name:"Suave y esponjoso",description:"Un bocado tierno para acompañar el café.",price:5300,img:IMG_C,position:"50% 50%",tags:["esponjoso","especial"],sticker:"Bien suave"},
   {id:"e1",brand:"Entre Dos",name:"Chocolate intenso",description:"Para quienes disfrutan cada capa de chocolate.",price:6900,img:IMG_A,position:"70% 45%",tags:["chocolate","especial"],sticker:"Chocolatoso"},
   {id:"h1",brand:"Havanna",name:"Dulce de leche clásico",description:"El sabor tradicional de los alfajores argentinos.",price:6500,img:IMG_B,position:"65% 50%",tags:["relleno","esponjoso"],sticker:"Favorito"},
   {id:"m2",brand:"Merengo",name:"Bocado con merengue",description:"Textura delicada y un toque dulce diferente.",price:6200,img:IMG_C,position:"25% 60%",tags:["merengue","especial","esponjoso"],sticker:"Con merengue"},
-  {id:"z2",brand:"Zafarrancho",name:"Extra chocolate",description:"Intenso, tentador y lleno de sabor.",price:6700,img:IMG_A,position:"25% 60%",tags:["chocolate","relleno"],sticker:"Extra chocolate"},
-  {id:"q2",brand:"La Quinta",name:"Especial de la casa",description:"Un giro original para probar algo distinto.",price:6300,img:IMG_C,position:"75% 55%",tags:["especial","merengue"],sticker:"Para descubrir"}
+  {id:"z2",brand:"Zafarrancho",name:"Extra chocolate",description:"Intenso, tentador y lleno de sabor.",price:6700,img:IMG_ZAF,position:"25% 60%",tags:["chocolate","relleno"],sticker:"Extra chocolate"},
+  {id:"q2",brand:"La Quinta",name:"Especial de la casa",description:"Un giro original para probar algo distinto.",price:6300,img:IMG_C,position:"75% 55%",tags:["especial","merengue"],sticker:"Para descubrir"},
+  {id:"s1",brand:"Saborée",name:"Surtido de alfajores",description:"Tres estilos irresistibles en una misma selección.",price:6300,img:IMG_SABO,position:"50% 50%",tags:["relleno","especial","esponjoso"],sticker:"Para descubrir"},
+  {id:"sf1",brand:"Santafesino",name:"Alfajor glaseado santafesino",description:"Capas delicadas con relleno de dulce de leche y baño blanco.",price:5300,img:IMG_SANTA,position:"50% 50%",tags:["relleno","especial"],sticker:"Regional"}
 ];
 const price=n=>new Intl.NumberFormat("es-AR",{style:"currency",currency:"ARS",maximumFractionDigits:0}).format(n);
 const prefs=new Set();
