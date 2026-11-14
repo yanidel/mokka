@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fffaf5">
+  <meta name="description" content="Mokka: una selección especial de alfajores, marcas y delicatessen. Descubrí tu alfajor ideal.">
+  <title>Mokka — Alfajores para todos los gustos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="announcement">UN UNIVERSO DE ALFAJORES, UNA SOLA TIENDA <span class="star">✦</span> <strong>Descubrí Mokka</strong></div>
+  <header class="site-header" id="inicio">
+    <div class="nav-shell wrap">
+      <a class="brand" href="#inicio" aria-label="Mokka, ir al inicio">
+        <img src="assets/mokka-logo.svg" alt="Mokka" width="184" height="94">
+      </a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#marcas">Marcas</a>
+        <a href="#alfajores" class="active">Alfajores</a>
+        <a href="#descubri">Tu alfajor ideal</a>
+        <a href="#regalos">Packs y regalos</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="search-toggle" type="button" title="Buscar alfajores" aria-label="Buscar alfajores">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="10.6" cy="10.6" r="6.8"/><path d="m16 16 5 5"/></svg>
+        </button>
+        <button class="icon-btn cart-toggle" type="button" aria-label="Abrir carrito">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M2 4h2l2.3 11h11.9l2-8H5"/><circle cx="9" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/></svg>
+          <span id="cart-count" class="cart-count">0</span>
+        </button>
+        <button id="menu-toggle" class="icon-btn menu-btn" aria-label="Abrir menú" type="button"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+    <div id="search-box" class="search-box" hidden><div class="wrap"><label for="site-search">¿Qué alfajor estás buscando?</label><input id="site-search" type="search" placeholder="Marca, chocolate, merengue, relleno..."><button id="search-close" type="button" aria-label="Cerrar búsqueda">×</button></div></div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden>
+      <a href="#marcas">Marcas</a><a href="#alfajores">Alfajores</a><a href="#descubri">Tu alfajor ideal</a><a href="#regalos">Packs y regalos</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" aria-label="Bienvenidos a Mokka">
+      <div class="hero-text">
+        <div class="eyebrow"><span class="accent-dot"></span> PARA LOS QUE AMAN LOS ALFAJORES</div>
+        <h1>El placer está<br>en <em>cada</em> bocado<span class="period">.</span></h1>
+        <p>Desde los clásicos hasta los más originales. Las marcas que te encantan, todas en un solo lugar.</p>
+        <div class="hero-buttons"><a href="#marcas" class="btn btn-hot">Explorar las marcas <span>↗</span></a><a class="text-link" href="#descubri">Encontrá tu favorito <span>→</span></a></div>
+        <div class="hero-foot"><span class="sparkle">✳</span> Un mundo de alfajores para descubrir</div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1648821994613-6fdbad6657ba?auto=format&fit=crop&w=1800&q=85" alt="Alfajores y chocolates artesanales" fetchpriority="high">
+        <div class="floating-stamp"><span>MUY</span><strong>rico!</strong><span>♡</span></div>
+      </div>
+      <div class="hero-bottom-wave" aria-hidden="true"></div>
+    </section>
+
+    <section class="brands-section wrap section" id="marcas">
+      <div class="section-heading"><div><span class="eyebrow mini">DESCUBRÍ TU PRÓXIMO FAVORITO</span><h2>Elegí por marca <span class="wiggle">✳</span></h2><p>Las que conocés. Las que te faltan probar.</p></div><a href="#alfajores" class="link-arrow" id="all-brands">Ver todas <span>↗</span></a></div>
+      <div class="brands-grid" id="brand-grid">
+        <button type="button" class="brand-card brand-merengo" data-brand="Merengo"><span class="brand-title cursive">Merengo</span><span class="brand-photo"><img src="https://images.unsplash.com/photo-1690988109082-893ae8bfff4c?auto=format&fit=crop&w=600&q=80" loading="lazy" alt="Alfajor de chocolate"></span><span class="brand-link">Descubrir <b>↗</b></span></button>
+        <button type="button" class="brand-card brand-zafarrancho" data-brand="Zafarrancho"><span class="brand-title cursive">Zafarrancho</span><span class="brand-photo"><img src="https://images.unsplash.com/photo-1648821994613-6fdbad6657ba?auto=format&fit=crop&w=600&q=80" loading="lazy" alt="Alfajores artesanales"></span><span class="brand-link">Descubrir <b>↗</b></span></button>
+        <button type="button" class="brand-card brand-quinta" data-brand="La Quinta"><span class="brand-title serif">La Quinta</span><span class="brand-photo"><img src="https://images.unsplash.com/photo-1757522744922-1708afba3917?auto=format&fit=crop&w=600&q=80" loading="lazy" alt="Dulce artesanal"></span><span class="brand-link">Descubrir <b>↗</b></span></button>
+        <button type="button" class="brand-card brand-entredos" data-brand="Entre Dos"><span class="brand-title cursive">Entre Dos</span><span class="brand-photo"><img src="https://images.unsplash.com/photo-1690988109082-893ae8bfff4c?auto=format&fit=crop&w=600&q=80&sat=-18" loading="lazy" alt="Alfajor con chocolate"></span><span class="brand-link">Descubrir <b>↗</b></span></button>
+        <button type="button" class="brand-card brand-havanna" data-brand="Havanna"><span class="brand-title serif">HAVANNA</span><span class="brand-photo"><img src="https://images.unsplash.com/photo-1648821994613-6fdbad6657ba?auto=format&fit=crop&w=600&q=80&sat=-25" loading="lazy" alt="Alfajores clásicos"></span><span class="brand-link">Descubrir <b>↗</b></span></button>
+      </div>
+    </section>
+
+    <section class="quiz-section section" id="descubri">
+      <div class="wrap quiz-layout">
+        <div class="quiz-top"><span class="eyebrow mini">HAGAMOS MATCH ✹</span><h2>¿Cómo te gusta <br><em>tu alfajor?</em></h2><p>¿Esponjoso o con mucho relleno? ¿Chocolate o merengue? Elegí lo que más te tienta y encontrá tu próximo favorito.</p><div class="quiz-tip"><span>♥</span> Podés elegir más de una opción</div></div>
+        <div class="quiz-content">
+          <div class="preference-grid" role="group" aria-label="Elegí tus preferencias">
+            <button class="preference" type="button" data-preference="esponjoso" aria-pressed="false"><span class="preference-emoji">🍪</span><strong>Esponjoso</strong><span class="option-check">✓</span></button>
+            <button class="preference" type="button" data-preference="relleno" aria-pressed="false"><span class="preference-emoji">🍯</span><strong>Mucho relleno</strong><span class="option-check">✓</span></button>
+            <button class="preference" type="button" data-preference="merengue" aria-pressed="false"><span class="preference-emoji">☁️</span><strong>Con merengue</strong><span class="option-check">✓</span></button>
+            <button class="preference" type="button" data-preference="chocolate" aria-pressed="false"><span class="preference-emoji">🍫</span><strong>Bien chocolatoso</strong><span class="option-check">✓</span></button>
+            <button class="preference" type="button" data-preference="especial" aria-pressed="false"><span class="preference-emoji">✨</span><strong>Algo diferente</strong><span class="option-check">✓</span></button>
+          </div>
+          <div class="quiz-cta"><button id="see-matches" type="button" class="btn btn-navy">Ver mis alfajores <span>→</span></button><button id="clear-preferences" type="button" class="muted-link">Borrar selección</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section wrap section" id="alfajores">
+      <div class="section-heading"><div><span class="eyebrow mini">PARA TENTARSE UN POQUITO</span><h2>Un antojo irresistible<span class="period">.</span></h2><p id="catalog-subtitle">Una selección de productos de ejemplo para conocer el estilo de Mokka.</p></div><button type="button" class="link-arrow" id="reset-filters">Mostrar todos <span>↗</span></button></div>
+      <div id="active-filter" class="active-filter" hidden></div>
+      <div id="products-grid" class="products-grid" aria-live="polite"></div>
+      <p class="demo-disclaimer">Sitio de prueba: nombres de variedades, imágenes, características y precios ilustrativos. No se realizan compras reales.</p>
+    </section>
+
+    <section class="gift-section section" id="regalos">
+      <div class="wrap gift-layout"><div class="gift-photo"><img src="https://images.unsplash.com/photo-1757522744922-1708afba3917?auto=format&fit=crop&w=1200&q=85" loading="lazy" alt="Dulces artesanales para compartir"></div><div class="gift-text"><span class="eyebrow mini">REGALÁ ALGO RICO</span><h2>Hay regalos que se <em>disfrutan.</em></h2><p>Para compartir, para celebrar o para darte un gusto. Pronto vas a encontrar nuestros packs y cajas especiales.</p><a href="#alfajores" class="btn btn-hot">Descubrir alfajores <span>↗</span></a><div class="tiny-note">✳ Las mejores excusas son dulces.</div></div></div>
+    </section>
+
+    <section class="marquee" aria-label="Nuestro mundo"><div>UN MUNDO DE ALFAJORES <span>✳</span> UN MUNDO DE SABORES <span>✳</span> UN MUNDO DE ALFAJORES <span>✳</span> UN MUNDO DE SABORES <span>✳</span></div></section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-about"><div class="footer-logo">Mokka<span class="footer-smile"></span></div><p>Un mundo de marcas y sabores para los que nunca dicen que no a un alfajor.</p></div>
+      <div><h3>Explorá</h3><a href="#marcas">Marcas</a><a href="#alfajores">Alfajores</a><a href="#descubri">Tu alfajor ideal</a></div>
+      <div><h3>Mokka</h3><a href="#regalos">Packs y regalos</a><a href="#inicio">Volver al inicio</a><span class="footer-note">Hecho con ♥ en Argentina</span></div>
+      <div class="footer-news"><h3>¿Te gusta lo rico?</h3><p>Sumate para recibir novedades cuando Mokka esté listo.</p><form id="newsletter"><input type="email" required placeholder="Tu email" aria-label="Tu email"><button type="submit" aria-label="Enviar email">→</button></form><small id="news-status">Formulario de demostración: aún no envía datos.</small></div>
+    </div><div class="wrap footer-bottom"><span>© 2026 Mokka · Diseño prototipo</span><span>Hecho para tentarte ☺</span></div>
+  </footer>
+
+  <div id="cart-backdrop" class="cart-backdrop" hidden></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Carrito de demostración" aria-hidden="true">
+    <div class="drawer-top"><div><span class="eyebrow mini">LO QUE TE TIENTA</span><h2>Tu carrito <span>♥</span></h2></div><button id="cart-close" aria-label="Cerrar carrito" type="button">×</button></div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="drawer-bottom"><div class="drawer-total"><span>Total de ejemplo</span><strong id="cart-total">$ 0</strong></div><button id="demo-checkout" class="btn btn-hot" type="button">Continuar <span>→</span></button><p>Prototipo: no se procesan pagos ni pedidos.</p></div>
+  </aside>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
