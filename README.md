@@ -13,7 +13,7 @@ Las 10 etiquetas elegidas para navegar son:
 1. Merengo
 2. Arocense
 3. Las Dos Rosas
-4. La Isla
+4. Isla del Sabor (**marca confirmada por el distribuidor**)
 5. Saboreé
 6. La Quinta
 7. El Cordobés
@@ -40,7 +40,7 @@ El icono superior abre una **lista de interés local al navegador**. No es un ca
 
 Las fotos de **Zafarrancho** y **Saboreé** ya estaban guardadas en el repositorio como archivos AVIF, basados en referencias suministradas. Las otras ocho imágenes están **enlazadas desde sus páginas públicas de origen**, NO copiadas al repositorio. Esta dependencia puede hacer que algunos enlaces o fotos dejen de funcionar; antes de lanzar, solicitar archivos oficiales y derechos de publicación a las marcas.
 
-La Isla está ilustrada con productos de "La Isla del Sabor" **a confirmar con el proveedor**. Los ejemplos de Catamarca y Tucumán muestran productos de terceros como **referencia regional**: no implican que el distribuidor venda esos fabricantes.
+**Isla del Sabor** fue confirmada como la marca a la que se refería el distribuidor al decir "La Isla". Los ejemplos de Catamarca y Tucumán muestran productos de terceros como **referencia regional**: los fabricantes de los productos que vende el distribuidor siguen sin identificar.
 
 ## Archivos principales
 
