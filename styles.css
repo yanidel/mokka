@@ -284,3 +284,77 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
     object-fit:cover;
   }
 }
+
+
+/* MOKKA RESEARCH CATALOG — nov 2026 */
+.brands-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
+.brand-card,.brand-merengo,.brand-zafarrancho,.brand-quinta,.brand-entredos,.brand-havanna,.brand-saboree,.brand-santafesino{
+  min-height:298px;
+  gap:11px;
+  padding:18px 12px 16px;
+}
+.brand-card{justify-content:flex-start}
+.brand-title{
+  min-height:48px;
+  font-family:var(--heading-font);
+  font-size:clamp(19px,2.05vw,27px);
+  font-style:normal;
+  font-weight:400;
+  line-height:1.07;
+  letter-spacing:-.025em;
+  overflow-wrap:anywhere;
+  display:flex;align-items:center;justify-content:center;
+}
+.brand-photo{height:auto;aspect-ratio:1/1;border-radius:11px;background:#fff8ef;mix-blend-mode:normal;width:100%;display:block;position:relative}
+.brand-photo img{width:100%;height:100%;object-fit:contain;object-position:center}
+.brand-origin{font-family:var(--body-font);font-size:10px;letter-spacing:.03em;line-height:1.3;color:#8c7964;margin-top:0;min-height:25px}
+.brand-link{font-weight:700;margin-top:auto;color:#74553c}
+.brand-disclaimer{font-family:var(--body-font);font-size:11px;line-height:1.7;color:#888074;margin:21px 0 0;max-width:850px}
+.brand-card:focus-visible{outline:2px solid #b18b5f;outline-offset:3px}
+.photo-unavailable:after{content:"Foto por confirmar";position:absolute;inset:0;display:grid;place-items:center;padding:12px;text-align:center;font-size:11px;color:#9a8266;line-height:1.4;background:linear-gradient(140deg,#fbf7f0,#eadfd1)}
+.quiz-content{min-width:0}
+.quiz-group{margin-bottom:20px}
+.quiz-group h3{font-family:var(--heading-font);font-size:24px;font-weight:400;line-height:1.1;margin:0 0 12px;color:#695340}
+.quiz-group+.quiz-group{border-top:1px solid #dcd0c1;padding-top:20px}
+.quiz-group .preference-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.quiz-group .preference{min-height:128px;padding:13px 8px;gap:8px;border-radius:14px}
+.quiz-group .preference .preference-emoji{font-size:34px}
+.quiz-group .preference strong{font-size:11px;line-height:1.3}
+.quiz-cta{margin-top:25px}
+.product-photo{display:block;position:relative;background:#f9f4ed}
+.product-photo img{object-fit:contain;padding:10px}
+.product-tag{font-size:10px;top:11px;left:11px}
+.product-body{padding:19px 17px 17px}
+.product-desc{font-size:12px;line-height:1.65}
+.trait-list{display:flex;flex-wrap:wrap;gap:5px;margin:13px 0}
+.trait-list span{background:#f4eee5;border:1px solid #eadbc8;border-radius:99px;padding:5px 8px;font-family:var(--body-font);font-size:10px;color:#725f4c;font-weight:600}
+.catalog-caution{color:#896b45;font-family:var(--body-font);font-size:11px;line-height:1.5;margin:8px 0 2px}
+.source-link{font-size:11px;font-family:var(--body-font);text-decoration:underline;text-underline-offset:3px;color:#706154;font-weight:700;white-space:nowrap}
+.product-bottom{gap:10px}
+.product-bottom .add-cart{font-size:11px;padding:10px 12px;white-space:nowrap}
+@media(max-width:1170px){
+  .brands-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .brand-title{font-size:clamp(20px,2.6vw,27px)}
+}
+@media(max-width:850px){
+  .brands-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .quiz-group .preference-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:560px){
+  .brands-section.wrap{padding-left:9px;padding-right:9px}
+  .brands-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .brands-grid .brand-card{min-height:260px;padding:14px 7px 12px;gap:9px;border-radius:16px}
+  .brands-grid .brand-title,
+  .brands-grid .brand-zafarrancho .brand-title{font-size:clamp(19px,5.6vw,27px);min-height:45px;line-height:1.07}
+  .brands-grid .brand-photo{aspect-ratio:1/1;border-radius:10px;width:100%;height:auto}
+  .brands-grid .brand-photo img{object-fit:contain}
+  .brand-origin{font-size:9px;min-height:25px}
+  .brand-link{font-size:11px}
+  .quiz-group .preference-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .quiz-group .preference{min-height:115px}
+  .quiz-group .preference .preference-emoji{font-size:29px}
+  .product-bottom{flex-wrap:wrap;flex-direction:row;align-items:center}
+  .product-bottom .source-link{font-size:10px}
+  .product-bottom .add-cart{width:auto;min-width:94px;flex:1}
+  .trait-list span{font-size:9px}
+}
