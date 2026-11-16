@@ -240,3 +240,10 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
   .quiz-top h2{font-size:43px}
   .product-title{font-size:20px}
 }
+
+/* Use the actual editorial alfajor photograph full-bleed, as in the approved mockup. */
+.hero-image{padding:0;display:block;overflow:hidden;background:#e8d2bc}
+.hero-image:before{display:none;content:none}
+.hero-image img{display:block;width:100%;height:100%;max-width:none;max-height:none;aspect-ratio:auto;object-fit:cover;object-position:52% center;border:0;border-radius:0;mix-blend-mode:normal;filter:none;box-shadow:none}
+@media(max-width:850px){.hero-image{height:425px;padding:0}.hero-image img{width:100%;height:100%;max-width:none;max-height:none;object-position:center}}
+@media(max-width:560px){.hero-image{height:310px;padding:0}.hero-image img{width:100%;height:100%;max-width:none;max-height:none;object-position:center}}
