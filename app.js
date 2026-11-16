@@ -4,7 +4,7 @@
 const brandPhotos={
  "Merengo":"https://acdn-us.mitiendanube.com/stores/001/390/554/products/121-bcd2af953701cf7c6916035891072508-480-0.png",
  "Arocense":"https://elsantafesino.com/wp-content/uploads/ALFAJOR-AROCENSE-1.jpg",
- "Las Dos Rosas":"https://http2.mlstatic.com/D_631427-MLA110462781697_042026-C.jpg",
+ "Las Dos Rosas":"https://acdn-us.mitiendanube.com/stores/006/727/377/products/diseno-sin-titulo-53-15e15ef16d153cd4ef17627929345099-480-0.webp",
  "La Isla":"https://acdn.mitiendanube.com/stores/001/147/879/products/9-cd84f162d2a1f80b1b17072577643518-640-0.png",
  "Saboreé":"assets/brands/saboree/alfajores.avif",
  "La Quinta":"https://www.alfajor-argentino.com.ar/116/alfajor-la-quinta-chocolate-blanco.jpg",
@@ -29,7 +29,7 @@ const products=[
  {id:"mer-s",brand:"Merengo",name:"Santafesino tradicional",desc:"Capas de masa fina y dulce de leche con cobertura blanca de merengue.",textura:["capas"],relleno:["ddl"],cobertura:["merengue"],source:sources.merengo,region:"Santa Fe"},
  {id:"mer-c",brand:"Merengo",name:"Alfajor de chocolate",desc:"Variedad de chocolate de la línea Merengo.",textura:[],relleno:["ddl"],cobertura:["chocolate"],source:sources.merengo,region:"Santa Fe"},
  {id:"aro-r",brand:"Arocense",name:"Especial nuez y ron",desc:"Alfajor artesanal glaseado con nueces; la foto corresponde a la variedad con ron.",textura:[],relleno:[],cobertura:["glaseado"],source:sources.arocense,region:"Arocena, Santa Fe"},
- {id:"dos-s",brand:"Las Dos Rosas",name:"Santafesino de tres tapas",desc:"Tres capas con dulce de leche y baño blanco; producto tradicional de Coronda.",textura:["capas"],relleno:["ddl"],cobertura:["glaseado"],source:"https://http2.mlstatic.com/D_631427-MLA110462781697_042026-C.jpg",region:"Coronda, Santa Fe"},
+ {id:"dos-s",brand:"Las Dos Rosas",name:"Santafesino de tres tapas",desc:"Tres capas con dulce de leche y baño blanco; producto tradicional de Coronda.",textura:["capas"],relleno:["ddl"],cobertura:["glaseado"],source:"https://acdn-us.mitiendanube.com/stores/006/727/377/products/diseno-sin-titulo-53-15e15ef16d153cd4ef17627929345099-480-0.webp",region:"Coronda, Santa Fe"},
  {id:"isl-s",brand:"La Isla",name:"Santafesino — La Isla del Sabor",desc:"Ejemplo documentado de alfajor santafesino; confirmar que esta sea la misma marca del proveedor.",textura:["capas"],relleno:["ddl"],cobertura:["glaseado"],source:sources.isla,region:"Santa Fe",caution:"Marca por confirmar"},
  {id:"sab-m",brand:"Saboreé",name:"Alfajor de maicena",desc:"Variedad de maicena de la línea artesanal rosarina.",textura:["maicena","suave"],relleno:["ddl"],cobertura:[],source:sources.saboree,region:"Rosario, Santa Fe"},
  {id:"sab-me",brand:"Saboreé",name:"Membrillo con merengue",desc:"Variedad con membrillo y merengue, publicada en catálogos de la marca.",textura:[],relleno:["membrillo"],cobertura:["merengue"],source:sources.saboree,region:"Rosario, Santa Fe"},
