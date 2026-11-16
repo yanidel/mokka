@@ -14,7 +14,7 @@
 | --- | --- | --- | --- |
 | Merengo | https://acdn-us.mitiendanube.com/stores/001/390/554/products/121-bcd2af953701cf7c6916035891072508-480-0.png | https://alfajoresmerengo.com/productos/ | Externa, permiso pendiente |
 | Arocense | https://elsantafesino.com/wp-content/uploads/ALFAJOR-AROCENSE-1.jpg | https://elsantafesino.com/arocena-ya-esta-lista-para-su-2-fiesta-del-alfajor-arocense-100-santafesino/ | Externa, permiso pendiente |
-| Las Dos Rosas | https://http2.mlstatic.com/D_631427-MLA110462781697_042026-C.jpg | https://listado.mercadolibre.com.ar/alfajores-las-dos-rosas | Externa, permiso pendiente |
+| Las Dos Rosas | https://acdn-us.mitiendanube.com/stores/006/727/377/products/diseno-sin-titulo-53-15e15ef16d153cd4ef17627929345099-480-0.webp | https://listado.mercadolibre.com.ar/alfajores-las-dos-rosas | Externa, permiso pendiente |
 | La Isla | https://acdn.mitiendanube.com/stores/001/147/879/products/9-cd84f162d2a1f80b1b17072577643518-640-0.png | https://www.royalonline.com.ar/productos/la-isla-del-sabor-alf-santafesino-x12-400g/ | Marca a confirmar |
 | Saboreé | assets/brands/saboree/alfajores.avif | https://www.alfajor-argentino.com.ar/p-473_alfajor_sabore | Asset generado desde referencia proporcionada; validar uso |
 | La Quinta | https://www.alfajor-argentino.com.ar/116/alfajor-la-quinta-chocolate-blanco.jpg | https://www.alfajoreslaquinta.com/tienda/ | Externa, permiso pendiente |
