@@ -1,58 +1,56 @@
-# Mokka — prototipo de e-commerce
+# Mokka — sitio de prueba
 
-Sitio de prueba para **Mokka**, una tienda de alfajores y delicatessen, creado en español rioplatense.
+Tienda de alfajores y delicatessen: prototipo **HTML/CSS/JavaScript** independiente, pensado para adaptar a Tiendanube. Español de Argentina; diseño premium con marfil, azul oscuro y caramelo.
 
-## Ver el prototipo
+## Previsualización
 
-Es un sitio **estático**: no requiere instalaciones ni compilación. Abrí index.html en un navegador o publicalo con GitHub Pages/Netlify.
+Abrí `index.html` o publicá `main` en Netlify o GitHub Pages. La publicación automática depende de la configuración del hosting; actualizar el repositorio **no confirma** que se haya publicado el deploy.
 
-### GitHub Pages
-1. Abrí **Settings → Pages** en este repositorio.
-2. En **Build and deployment**, seleccioná **Deploy from a branch**.
-3. Elegí **main** y **/(root)**; guardá los cambios.
-4. Una vez que GitHub confirme la publicación, el sitio debería estar en https://yanidel.github.io/mokka/ (la URL puede no funcionar hasta que Pages esté habilitado).
+## Catálogo de investigación (16 noviembre 2026)
 
-## Qué funciona en esta versión
+Las 10 etiquetas elegidas para navegar son:
 
-- Inicio responsive, con fotografía grande y diseño premium/divertido.
-- Exploración por marcas: Merengo, Zafarrancho, La Quinta, Entre Dos, Havanna.
-- Filtro interactivo **¿Cómo te gusta tu alfajor?**: esponjoso, mucho relleno, con merengue, bien chocolatoso, algo diferente (permite varias preferencias).
-- Catálogo que se filtra por marca, preferencias y texto de búsqueda.
-- Carrito de demostración con subtotal, eliminación y persistencia local en el navegador.
-- Preparado para dispositivos móviles.
+1. Merengo
+2. Arocense
+3. Las Dos Rosas
+4. La Isla
+5. Saboreé
+6. La Quinta
+7. El Cordobés
+8. Zafarrancho
+9. Catamarqueños (**estilo regional; fabricante por confirmar**)
+10. Tucumanos (**estilo regional; fabricante por confirmar**)
 
-## Importante: solo un prototipo
+`app.js` contiene 20 registros de **variedades documentadas**, no SKUs activos. Ver `PHOTO_SOURCES.md` para fuentes y fotos utilizadas.
 
-**No hay procesamiento de pagos, pedidos, checkout, email ni stock.** Las variedades de producto, descripciones, atributos, valores en ARS, fotografías genéricas y rótulos de marca son **ejemplos visuales**. No confirman artículos reales de ninguna marca. El carrito es local al navegador. El formulario de email no almacena ni envía la dirección.
+### Cómo funciona el recomendador
 
-Las fotografías están vinculadas temporalmente desde Unsplash y se atribuyen a Abril Ventrice, Valentina Tamayo y sheri silver; reemplazarlas con fotografías de los productos que realmente se venderán antes del lanzamiento.
+- **Textura:** suave, capas finas, maicena.
+- **Relleno:** dulce de leche, fruta/membrillo (incluye pera), cayote, pistacho.
+- **Cobertura:** chocolate, chocolate blanco, merengue, glaseado/almíbar.
+- Permite seleccionar varias opciones dentro de cada grupo y combina grupos con una coincidencia conjunta.
+- Busca por nombre de marca, producto, región y atributo.
+- Los resultados muestran fuentes públicas y etiquetas; si la foto no carga muestra un aviso, nunca otra marca disfrazada.
 
-El logo SVG está trazado directamente desde la imagen de Mokka compartida en la conversación: assets/mokka-logo.svg. No confundir los nombres de marca estilizados en las tarjetas con logos oficiales.
+### Favoritos
 
-## Estructura
+El icono superior abre una **lista de interés local al navegador**. No es un carrito de compra y no indica precio, inventario ni posibilidad de compra. El formulario de email también es ilustrativo.
 
-- index.html — contenido y estructura de la página
-- styles.css — estilos, diseño y breakpoints
-- app.js — catálogo de ejemplo, filtro por marcas/preferencias, búsqueda y carrito
-- assets/mokka-logo.svg — logotipo Mokka
-- assets/brands/zafarrancho/alfajor.avif — fotografía ilustrativa optimizada de Zafarrancho
-- assets/brands/santafesino/alfajor.avif — fotografía ilustrativa optimizada del estilo santafesino
-- assets/brands/saboree/alfajores.avif — fotografía ilustrativa optimizada de Saborée
+## Sobre las fotos
 
-## Migración posterior a Tiendanube
+Las fotos de **Zafarrancho** y **Saboreé** ya estaban guardadas en el repositorio como archivos AVIF, basados en referencias suministradas. Las otras ocho imágenes están **enlazadas desde sus páginas públicas de origen**, NO copiadas al repositorio. Esta dependencia puede hacer que algunos enlaces o fotos dejen de funcionar; antes de lanzar, solicitar archivos oficiales y derechos de publicación a las marcas.
 
-Este proyecto es una **referencia de diseño y experiencia de usuario**; no es todavía un theme ZIP compatible con Tiendanube.
+La Isla está ilustrada con productos de "La Isla del Sabor" **a confirmar con el proveedor**. Los ejemplos de Catamarca y Tucumán muestran productos de terceros como **referencia regional**: no implican que el distribuidor venda esos fabricantes.
 
-Para llevarlo a Tiendanube:
-1. Transferir la estructura, colores, tipografías y componentes visuales al tema (templates + CSS + JS).
-2. Reemplazar los productos de ejemplo por artículos reales del catálogo mediante los datos de Tiendanube, con fotografías, precios, variantes y disponibilidad.
-3. Definir en productos/tags/metacampos los atributos: esponjoso, relleno, merengue, chocolate, especial; definir marca y usar esos datos para el recomendador.
-4. Usar el carrito, checkout, envíos y medios de pago **nativos de Tiendanube**; no reutilizar el carrito demo de app.js.
-5. Validar derechos de uso de fotografías y logotipos de las marcas.
-6. Rehacer pruebas de responsive, accesibilidad, rendimiento y compra real en staging.
+## Archivos principales
 
-No hay credenciales, tokens ni integraciones de pago en este repositorio.
+- `index.html`: estructura, diez tarjetas y formulario de preferencias.
+- `styles.css`: responsive y aspecto premium.
+- `app.js`: variedades investigadas, atributos, buscador y favoritos.
+- `PHOTO_SOURCES.md`: procedencia de imágenes y fuentes, con limitaciones.
+- `assets/mokka-logo-premium.svg`: logo para el test.
+- `assets/brands/`: imágenes anteriores optimizadas en AVIF.
 
-## Imágenes nuevas (noviembre 2026)
+## Adaptación futura a Tiendanube
 
-Las tres fotografías de marca son **imágenes de producto generadas y retocadas con IA** a partir de las referencias facilitadas por el usuario, conservando un fondo beige consistente y sin texto. Se cargan como archivos AVIF separados por marca/estilo y están optimizadas como **miniaturas de 300 × 300 px** para navegación rápida. Antes de utilizarlas para vender un producto específico, comprobar que tamaño, textura, ingredientes y presentación coincidan con el artículo real y sustituir por fotos de mayor resolución donde corresponda.
+Necesita inventario real: marcas, variedades, EAN/SKU, fotos con derechos, presentación, gramaje, precios y stock. Estos metadatos serán la base de los filtros. Reemplazar favoritos por carrito/checkout nativos de Tiendanube y comprobar la compra en staging. No hay tokens ni credenciales en este prototipo.
