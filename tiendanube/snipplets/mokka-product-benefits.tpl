@@ -1,6 +1,10 @@
 {# Promotional copy only; native shipping calculator and rates remain authoritative. #}
 <div class="mokka-native-benefits" aria-label="Información de entregas">
   <div class="mokka-native-benefits__item">
+    <strong>📦 Envíos a todo el país</strong>
+    <p>Enviamos alfajores a toda la Argentina. Consultá el costo y el plazo de entrega para tu código postal en el checkout.</p>
+  </div>
+  <div class="mokka-native-benefits__item">
     <strong>Entrega express en Rosario</strong>
     <p>$5.000 en la zona habilitada · Gratis desde $100.000. Sujeto a disponibilidad de mensajería y a la selección en el checkout.</p>
   </div>
