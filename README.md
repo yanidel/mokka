@@ -18,7 +18,7 @@ Los enlaces son **relativos** (`index.html`, `delicatessen.html`, `regalos.html`
 
 ### Fotografía ilustrativa (secciones nuevas)
 
-- Delicatessen: fotografía ilustrativa de una caja de chocolates de Madeline Liu, publicada con licencia Unsplash: https://unsplash.com/photos/Fzu0ot7AThE
+- Delicatessen: hero original generado para Mokka de un **Toblerone abierto** (chocolate triangular y envoltorio amarillo), optimizado en WebP de 1200 × 800 px como `assets/hero/toblerone-open.webp`; se dimensiona igual que el hero de Alfajores en desktop y mobile. Imagen ilustrativa, no prueba stock, presentación ni relación oficial con la marca.
 - Regalos: fotografía ilustrativa de chocolates para regalo de Eunkwang Choi, publicada con licencia Unsplash: https://unsplash.com/photos/p4E1o15SQqc
 - Las imágenes de estas dos secciones **no representan stock confirmado de Mokka**. Deberán sustituirse por fotos autorizadas de los productos reales para el lanzamiento.
 
