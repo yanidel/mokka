@@ -25,11 +25,12 @@ Los enlaces son **relativos** (`index.html`, `delicatessen.html`, `regalos.html`
 ## Landing de Rosario — campaña local (noviembre 2026)
 
 - **`rosario.html`**: landing específica para anuncios dirigidos a Rosario. Hero fotográfico con enlace al catálogo online (preparado para Tiendanube), propuesta de entrega express, retiro coordinado en la Terminal, referencias de marcas y preguntas frecuentes.
+- **Precios de entrega para Rosario:** $5.000 express dentro de la zona habilitada, **gratis desde $100.000 de compra** y retiro gratuito en la Terminal. Pedidos express hasta las 21 h, sujetos a disponibilidad. Son los precios comerciales previstos para Mokka y no las tarifas reales cobradas por cadeterías; aún hay que configurarlos en la Tiendanube de Mokka.
 - **`_redirects`**: alias `/rosario` → `/rosario.html` para Netlify. En GitHub Pages se accede usando `rosario.html`.
 - El sitio general mantiene las tres páginas de categoría. La portada incluye un vínculo discreto a entrega express en Rosario y los otros enlaces están en anuncio, menú móvil y pie.
 - **Compras**: los pedidos de Alfajores y dulces, Delicatessen y Rosario se harán mediante Tiendanube, NO por WhatsApp. En el prototipo actual los enlaces muestran el catálogo de prueba, sin pagos. Se requiere conectar el URL real de Mokka en `shop-links.js` y luego el checkout de Tiendanube. El local de la Terminal abre 24 horas; el horario anunciado para pedidos express es hasta las 21 h y está sujeto a mensajería.
 - **Publicidad**: dirigir anuncios locales a `/rosario?utm_source=...&utm_campaign=...`; configurar GA4/Meta Pixel en la tienda Tiendanube y medir compras reales, no clics de WhatsApp. El enlace a tienda (cuando se configura) arrastra parámetros UTM y click IDs de campaña. El sitio no incorpora códigos publicitarios nuevos ni activa campañas por sí mismo.
-- **Para habilitar ventas automatizadas**: definir la URL oficial de Mokka en `shop-links.js`, conectar catálogo, stock, precios y checkout de Tiendanube, y configurar entrega express por zona, retiros y horarios en el checkout.
+- **Para habilitar ventas automatizadas**: definir la URL oficial de Mokka en `shop-links.js`, conectar catálogo, stock, precios y checkout de Tiendanube, y configurar entrega express ($5.000 para pedidos menores de $100.000; gratis desde $100.000), retiro sin cargo, cobertura y horarios en el checkout.
 
 ## Previsualización
 
