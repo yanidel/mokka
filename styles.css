@@ -1006,3 +1006,15 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
   .delivery-zone-price{font-size:32px}
   .delivery-zone-card{border-radius:14px}
 }
+
+
+/* Mokka Rosario fixed-rate delivery benefits (replaces distance-based estimate cards). */
+.delivery-rate-grid .delivery-zone-card{min-height:300px}
+.delivery-rate-grid .delivery-zone-featured{
+  background:linear-gradient(135deg,#f7efe2,#e8d6b7);
+  border-color:#d4b795;
+}
+.delivery-rate-grid .delivery-zone-featured .delivery-zone-price{color:#91632f}
+@media(max-width:850px){
+  .delivery-rate-grid .delivery-zone-card{min-height:0}
+}
