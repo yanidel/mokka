@@ -757,3 +757,55 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
     white-space:normal;
   }
 }
+
+
+/* Floating Mokka WhatsApp contact — visible on all three entry pages. */
+.whatsapp-float{
+  position:fixed;
+  z-index:55;
+  right:24px;
+  bottom:calc(24px + env(safe-area-inset-bottom, 0px));
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  min-height:54px;
+  padding:11px 19px 11px 15px;
+  border-radius:100px;
+  color:#fff;
+  background:#218c59;
+  box-shadow:0 8px 28px rgba(17,53,35,.27);
+  border:1px solid rgba(255,255,255,.23);
+  font:700 13px/1 var(--body-font,Arial,sans-serif);
+  transition:transform .18s ease,background .18s ease,box-shadow .18s ease;
+  text-decoration:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.whatsapp-float:hover{
+  color:#fff;
+  background:#176f46;
+  box-shadow:0 10px 34px rgba(17,53,35,.32);
+  transform:translateY(-2px);
+}
+.whatsapp-float:focus-visible{
+  outline:3px solid #e1c298;
+  outline-offset:3px;
+}
+.whatsapp-icon{width:27px;height:27px;flex-shrink:0}
+.whatsapp-label{white-space:nowrap}
+@media(max-width:560px){
+  .whatsapp-float{
+    right:14px;
+    bottom:calc(18px + env(safe-area-inset-bottom, 0px));
+    width:53px;
+    height:53px;
+    min-height:53px;
+    padding:11px;
+    border-radius:50%;
+  }
+  .whatsapp-icon{width:29px;height:29px}
+  .whatsapp-label{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .whatsapp-float{transition:none}
+}
