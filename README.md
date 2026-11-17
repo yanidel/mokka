@@ -12,7 +12,7 @@ Tres páginas HTML separadas con navegación compartida en escritorio y móvil:
 | Delicatessen | `delicatessen.html` | Introducción premium a la sección gourmet (selección en preparación); segundo botón: **Dulces ↗** |
 | Regalos, cestas e instituciones | `regalos.html` | Regalos personales, cestas y opciones corporativas/institucionales; entrada propia en el menú |
 
-`pages.js` controla el menú móvil de Delicatessen, Regalos y Rosario, y permite **copiar** un borrador de consulta de regalos sin almacenar ni enviar datos. `app.js` sigue operando únicamente el buscador, los filtros y la lista local de favoritos de `index.html`. Las tres páginas comparten `styles.css` y el logo.
+`pages.js` controla el menú móvil de Delicatessen, Regalos y Rosario, y permite **copiar** un borrador de consulta de regalos sin almacenar ni enviar datos. `app.js` sigue operando el buscador, los filtros y los favoritos de `index.html`, usando la base común `catalog-data.js`. Las tres páginas comparten `styles.css` y el logo.
 
 Los enlaces son **relativos** (`index.html`, `delicatessen.html`, `regalos.html`) para que el sitio funcione publicado como raíz o bajo una subcarpeta de GitHub Pages. No hay pasarela de pago ni formulario conectado a un servidor en este prototipo. El botón flotante de WhatsApp aparece **solo en `regalos.html`**.
 
@@ -85,12 +85,20 @@ Las fotos de **Zafarrancho** y **Saboreé** ya estaban guardadas en el repositor
 
 Necesita inventario real: marcas, variedades, EAN/SKU, fotos con derechos, presentación, gramaje, precios y stock. Estos metadatos serán la base de los filtros. Reemplazar favoritos por carrito/checkout nativos de Tiendanube y comprobar la compra en staging. No hay tokens ni credenciales en este prototipo.
 
-## Precios de productos conocidos
+## Catálogo de 21 presentaciones y detalle individual
 
-- **Merengo — caja de 12 alfajores: $28.000 IVA incluido**, precio de venta previamente definido por Mokka (sin incluir envío). Se agregó como una referencia separada en `app.js` para no confundir una caja de 12 con una unidad suelta.
-- **Zafarrancho — caja x12: $21.000** era una referencia de precio minorista observada, **no** un precio de venta aprobado por Mokka; no está publicado como precio propio.
-- No se cuenta con lista de precios ni formatos confirmados de Arocense, Las Dos Rosas, Isla del Sabor, Saboreé, La Quinta, El Cordobés, Catamarqueños y Tucumanos. Sus precios siguen pendientes y no deben inventarse.
-- Los precios de los pedidos reales deberán venir del catálogo de Tiendanube, no del prototipo local.
+- `catalog-data.js` contiene la información, las fotos ilustrativas y los **precios con su origen** para las 21 fichas: **1 precio definido por Mokka, 12 referencias online y 8 estimaciones**.
+- `app.js` renderiza los 21 productos con su presentación, precio y etiqueta de procedencia. Cada ficha tiene enlace a `producto.html?id=...`.
+- `producto.html` + `producto.js`: vista previa individual mobile-first, con imagen de referencia, descripción, caja/estuche, precio, procedencia del precio, cantidad, total de prueba, favoritos, entregas Rosario y productos relacionados.
+- Las 8 estimaciones se indican como **precios no verificados**, inventados para probar la experiencia; no son ofertas ni precios comerciales autorizados. Las fuentes y cada importe se documentan en [PRICE_RESEARCH.md](PRICE_RESEARCH.md).
+- **Merengo x12 $28.000** es el único precio de venta definido previamente por Mokka; los demás son referencias de terceros o propuestas de prueba. La existencia de un precio online **no prueba** que el proveedor de Mokka ofrezca ese empaque.
+- Las páginas de prueba **no tienen checkout**. El precio, el stock, la foto y las variantes reales se deben cargar en Tiendanube y el tema usará los valores nativos del objeto `product`.
+
+## Adaptador de producto para el tema Tiendanube
+
+Incluí archivos de integración en [tiendanube/](tiendanube/README.md): `templates/product.tpl`, `snipplets/mokka-product-benefits.tpl` y `static/css/mokka-product.css`. El template usa los snipplets **nativos** de imagen y compra (`product-image.tpl` / `product-form.tpl`) y conserva los hooks JavaScript críticos del tema Base.
+
+**No es un ZIP completo ni se instaló en la tienda**: hay que fusionar el adaptador con los archivos reales del tema Mokka, y probar imágenes, variantes, stock, añadir al carrito, carrito AJAX, pagos y envíos. No sobrescribir a ciegas un `product.tpl` personalizado.
 
 ## Conexión a la tienda real
 
