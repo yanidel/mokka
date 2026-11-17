@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#fbfaf7">
-  <meta name="description" content="Delicatessen en Mokka: una selección gourmet en preparación, chocolates, dulces y especialidades para compartir.">
+  <meta name="description" content="Delicatessen Mokka: bocaditos, chocolates, confituras y dulce de leche Merengo con fotos y referencias de precios. Explorá todas las categorías.">
   <title>Mokka — Delicatessen</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Lato:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="pages.js" defer></script>
+  <script src="delicatessen-data.js" defer></script>
+  <script src="delicatessen.js" defer></script>
 </head>
 <body class="inner-page delicatessen-page">
 <div class="announcement"><a class="announce-local-link" href="rosario.html">ROSARIO: ENTREGA EXPRESS <span aria-hidden="true">↗</span></a> <span class="star">✦</span> SABORES PARA DESCUBRIR</div>
@@ -50,20 +52,54 @@
         <h1 id="deli-title">Delicatessen<span class="period">.</span></h1>
         <p>Un universo de sabores para regalarte un momento distinto. Chocolates, dulces y especialidades elegidas con ganas de sorprender.</p>
         <div class="hero-buttons">
-          <a class="btn btn-hot" href="#seleccion">Conocé la selección <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-hot" href="#catalogo-deli">Ver productos Merengo <span aria-hidden="true">↓</span></a>
           <a class="btn btn-hero-secondary" href="index.html">Dulces <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </div>
   </section>
-  <section class="editorial-section wrap section" id="seleccion">
-    <div class="section-heading"><div><span class="eyebrow mini">UN MUNDO POR DESCUBRIR</span><h2>Lo rico tiene muchas formas.</h2><p>Estamos preparando la selección Delicatessen de Mokka.</p></div></div>
-    <div class="editorial-tiles">
-      <article class="editorial-tile"><div class="tile-visual tile-choco"><img src="https://images.unsplash.com/photo-1767510533183-425731f088a7?auto=format&fit=crop&w=900&q=80" alt="Chocolates gourmet ilustrativos" loading="lazy"></div><div class="tile-caption"><span>01 / LA TENTACIÓN</span><h3>Chocolates y bocados</h3><p>Una selección pensada para los amantes del chocolate.</p></div></article>
-      <article class="editorial-tile"><div class="tile-visual tile-sweets"><img src="https://images.unsplash.com/photo-1757522744922-1708afba3917?auto=format&fit=crop&w=900&q=80" alt="Repostería dulce ilustrativa" loading="lazy"></div><div class="tile-caption"><span>02 / LO ARTESANAL</span><h3>Dulces y especialidades</h3><p>Sabores para disfrutar solos, con café o para compartir.</p></div></article>
-      <article class="editorial-tile"><div class="tile-visual tile-gifting"><img src="https://images.unsplash.com/photo-1769775264026-fbc4e974dea8?auto=format&fit=crop&w=900&q=80" alt="Selección gourmet de regalo ilustrativa" loading="lazy"></div><div class="tile-caption"><span>03 / PARA COMPARTIR</span><h3>Selecciones especiales</h3><p>Pequeños descubrimientos reunidos para una gran ocasión.</p></div></article>
+  <section class="deli-catalog wrap section" id="catalogo-deli" aria-labelledby="deli-catalog-title">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow mini">MERENGO · TRADICIÓN SANTAFESINA</span>
+        <h2 id="deli-catalog-title">Más allá del alfajor.</h2>
+        <p>Bocaditos, chocolates, confituras y dulce de leche de Merengo. Explorá la colección por categoría.</p>
+      </div>
     </div>
-    <p class="editorial-disclaimer">Imágenes ilustrativas. El catálogo, las marcas, los precios y la disponibilidad de Delicatessen todavía no están confirmados.</p>
+    <div class="deli-catalog-controls">
+      <nav id="deli-category-filters" class="deli-category-filters" aria-label="Categorías de delicatessen">
+        <button type="button" class="deli-category-pill" data-category="all" aria-pressed="true">Todos</button>
+        <button type="button" class="deli-category-pill" data-category="bocaditos" aria-pressed="false">Bocaditos</button>
+        <button type="button" class="deli-category-pill" data-category="chocolates" aria-pressed="false">Bañados en chocolate</button>
+        <button type="button" class="deli-category-pill" data-category="confituras" aria-pressed="false">Confituras</button>
+        <button type="button" class="deli-category-pill" data-category="dulces" aria-pressed="false">Dulce de leche</button>
+      </nav>
+      <label class="deli-search-box">
+        <span class="deli-search-label">Buscar</span>
+        <input id="deli-product-search" type="search" placeholder="Chocolate, maní, bocaditos..." autocomplete="off">
+      </label>
+    </div>
+    <div class="deli-catalog-heading">
+      <div>
+        <h3 id="deli-filter-title">Todos los productos</h3>
+        <p id="deli-filter-description">Una selección de especialidades de Merengo, sin alfajores.</p>
+      </div>
+      <span id="deli-result-count" aria-live="polite">11 productos</span>
+    </div>
+    <div id="deli-product-grid" class="deli-product-grid" aria-live="polite">
+      <p class="deli-loading">Cargando el catálogo de Merengo...</p>
+    </div>
+    <p class="editorial-disclaimer deli-pricing-note"><strong>Precios publicados por Merengo</strong> en su tienda oficial al 17/11/2026. Son referencias para la maqueta de Mokka, <strong>no precios de venta aprobados ni stock confirmado</strong>. La compra se realizará mediante Tiendanube cuando el catálogo real esté conectado. Las fotografías proceden del sitio del fabricante y su uso comercial deberá autorizarse.</p>
+  </section>
+  <section class="deli-seasonal">
+    <div class="wrap deli-seasonal-inner">
+      <div>
+        <span class="eyebrow mini">COLECCIONES DE TEMPORADA</span>
+        <h2>Pan dulces y budines.</h2>
+        <p>Merengo también menciona especialidades navideñas, pero su categoría oficial no muestra productos publicados actualmente. Las incorporaremos cuando haya presentaciones y disponibilidad verificadas.</p>
+      </div>
+      <a class="deli-seasonal-link" href="https://alfajoresmerengo.com/pan-dulces-y-budines/" rel="noopener noreferrer" target="_blank">Ver catálogo del fabricante ↗</a>
+    </div>
   </section>
   <section class="cross-entry-wrap wrap section">
     <a class="cross-entry cross-entry-sweets" href="index.html"><span class="eyebrow mini">¿SOMOS DE DULCE?</span><strong>Alfajores y dulces</strong><span class="cross-entry-action">Volver a los clásicos regionales <b aria-hidden="true">↗</b></span></a>
