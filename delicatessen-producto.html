@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#fbfaf7">
+ <meta name="description" content="Conocé los productos de la colección Merengo Delicatessen en Mokka. Fotos, presentaciones, categorías y referencias de precio.">
+ <title>Producto Delicatessen Merengo | Mokka</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Lato:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css">
+ <script src="pages.js" defer></script>
+ <script src="delicatessen-data.js" defer></script>
+ <script src="delicatessen-producto.js" defer></script>
+</head>
+<body class="inner-page delicatessen-page deli-detail-page">
+<div class="announcement"><a class="announce-local-link" href="rosario.html">ROSARIO: ENTREGA EXPRESS <span aria-hidden="true">↗</span></a> <span class="star">✦</span> SABORES PARA DESCUBRIR</div>
+<header class="site-header" id="inicio">
+  <div class="nav-shell wrap">
+    <a class="brand" href="index.html" aria-label="Mokka, volver a Alfajores y dulces"><img src="assets/mokka-logo-premium.svg" alt="Mokka" width="184" height="94"></a>
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="index.html">Alfajores y dulces</a>
+      <a href="delicatessen.html" class="active" aria-current="page">Delicatessen</a>
+      <a href="regalos.html">Regalos, cestas e instituciones</a>
+      <a href="index.html#descubri">Tu alfajor ideal</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="icon-btn" href="index.html#alfajores" aria-label="Explorar el catálogo de alfajores" title="Ver alfajores">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.6" cy="10.6" r="6.8"/><path d="m16 16 5 5"/></svg>
+      </a>
+      <button id="menu-toggle" class="icon-btn menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav" type="button">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden>
+    <a href="index.html">Alfajores y dulces</a>
+    <a href="delicatessen.html" aria-current="page">Delicatessen</a>
+    <a href="regalos.html">Regalos, cestas e instituciones</a>
+    <a href="index.html#descubri">Tu alfajor ideal</a>
+  
+    <a href="rosario.html">Entrega express Rosario</a>
+  </nav>
+</header>
+
+<main class="wrap deli-detail-main">
+  <nav class="deli-detail-breadcrumb" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><a href="delicatessen.html">Delicatessen</a><span aria-hidden="true">/</span><span id="deli-detail-crumb">Producto</span></nav>
+  <section id="deli-detail-not-found" class="deli-detail-not-found" hidden>
+    <h1>Este producto no está en el catálogo.</h1>
+    <p>Volvé a Delicatessen para explorar los productos Merengo.</p>
+    <a class="btn btn-hot" href="delicatessen.html#catalogo-deli">Ver productos <span aria-hidden="true">↗</span></a>
+  </section>
+  <div id="deli-detail-content" hidden>
+    <section class="deli-detail-columns">
+      <div class="deli-detail-photo">
+        <img id="deli-detail-image" alt="" width="700" height="700">
+        <span>Fotografía del fabricante. Uso de referencia para el prototipo.</span>
+      </div>
+      <div class="deli-detail-description">
+        <div class="deli-detail-eyebrow">MERENGO · <span id="deli-detail-category"></span></div>
+        <h1 id="deli-detail-name"></h1>
+        <p id="deli-detail-pack" class="deli-detail-pack"></p>
+        <p id="deli-detail-text"></p>
+        <div id="deli-detail-tags" class="deli-product-tags"></div>
+        <div class="deli-detail-pricing">
+          <div class="deli-detail-price" id="deli-detail-price"></div>
+          <span>Precio minorista publicado por Merengo · referencia, no precio de Mokka</span>
+          <a id="deli-detail-source" href="https://alfajoresmerengo.com/productos/" target="_blank" rel="noopener noreferrer">Ver producto y precio en Merengo ↗</a>
+        </div>
+        <div class="deli-detail-actions">
+          <button class="btn btn-hot" type="button" disabled>Comprar en Tiendanube · Próximamente</button>
+          <a class="btn btn-hero-secondary" href="delicatessen.html#catalogo-deli">Volver a Delicatessen ↗</a>
+        </div>
+        <p class="deli-detail-disclaimer">No se procesan compras en esta maqueta. La venta, el precio final, el stock y las opciones de entrega se cargarán en la tienda Tiendanube de Mokka.</p>
+      </div>
+    </section>
+    <section class="detail-services" aria-label="Opciones de entrega">
+      <div><strong>📦 Envíos a todo el país</strong><span>Opciones y plazos según destino, al conectar Tiendanube.</span></div>
+      <div><strong>🛵 Express en Rosario</strong><span>$5.000 · Gratis desde $100.000 en la zona habilitada.</span></div>
+      <div><strong>🕘 Pedidos hasta las 21 h</strong><span>Entrega express sujeta a disponibilidad de mensajería.</span></div>
+      <div><strong>📍 Retiro en Terminal</strong><span>Sin cargo cuando esté habilitado en el checkout.</span></div>
+    </section>
+    <section class="deli-related section">
+      <div class="section-heading">
+        <div><span class="eyebrow mini">PARA SEGUIR DESCUBRIENDO</span><h2>Más de Merengo.</h2></div>
+        <a class="link-arrow" href="delicatessen.html#catalogo-deli">Ver catálogo ↗</a>
+      </div>
+      <div id="deli-related-grid" class="deli-product-grid"></div>
+    </section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about"><div class="footer-logo">Mokka<span class="footer-smile"></span></div><p>Una selección de dulces, descubrimientos y pequeños placeres para compartir.</p></div>
+    <div><h3>Descubrí</h3><a href="index.html">Alfajores y dulces</a><a href="delicatessen.html">Delicatessen</a><a href="index.html#descubri">Tu alfajor ideal</a></div>
+    <div><h3>Para compartir</h3><a href="regalos.html">Regalos</a><a href="regalos.html#cestas">Cestas</a><a href="regalos.html#instituciones">Instituciones</a><a href="rosario.html">Entrega express Rosario</a></div>
+    <div class="footer-news"><h3>Un proyecto en construcción</h3><p>Esta es una demostración de Mokka. Las propuestas y los productos definitivos se incorporarán cuando esté confirmado el catálogo.</p></div>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 Mokka · Sitio de prueba</span><span>Argentina · Hecho para compartir</span></div>
+</footer>
+
+</body>
+</html>
