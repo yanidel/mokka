@@ -980,3 +980,29 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
   font-weight:800;
 }
 .announcement .announce-local-link:hover{opacity:.8}
+
+/* Rosario pilot: published courier reference pricing, not a guaranteed Mokka shipping quote. */
+.rosario-zones{padding-top:45px;padding-bottom:35px}
+.delivery-zone-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.delivery-zone-card{display:flex;flex-direction:column;align-items:flex-start;min-width:0;border:1px solid #e4d8c9;border-radius:19px;background:#fffdf8;padding:25px 23px 24px}
+.delivery-zone-card:nth-child(2){background:#f8f0e5}
+.delivery-zone-kicker{font:800 10px/1.4 var(--body-font);letter-spacing:.09em;color:#97714e}
+.delivery-zone-card h3{font:400 clamp(23px,2.5vw,32px)/1.15 var(--heading-font);margin:16px 0 13px}
+.delivery-zone-price{font:400 clamp(29px,3vw,41px)/1.12 var(--heading-font);letter-spacing:-.02em;color:#203049}
+.delivery-zone-card p{font-size:12px;line-height:1.7;color:#6f675e;margin:15px 0 23px;flex:1}
+.delivery-zone-card>a{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;border-radius:10px;padding:13px 14px;background:#24364d;color:#fff;font-size:12px;font-weight:800}
+.delivery-zone-card>a:hover{background:#344c68;color:#fff}
+.delivery-zone-card>a span{font-size:18px}
+.delivery-zone-notice{font-size:11px;line-height:1.8;color:#756d61;margin:19px 0 0;max-width:1080px}
+.delivery-zone-notice a{color:#7a5437;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:850px){
+  .delivery-zone-grid{grid-template-columns:1fr;gap:10px}
+  .delivery-zone-card{padding:20px}
+  .delivery-zone-card p{margin:10px 0 17px}
+}
+@media(max-width:560px){
+  .rosario-zones{padding-top:30px;padding-bottom:25px}
+  .delivery-zone-card h3{font-size:25px;margin:9px 0}
+  .delivery-zone-price{font-size:32px}
+  .delivery-zone-card{border-radius:14px}
+}
