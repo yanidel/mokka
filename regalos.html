@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fbfaf7">
+  <meta name="description" content="Regalos personales, cestas gourmet y propuestas para empresas e instituciones. Descubrí el espacio de regalos de Mokka.">
+  <title>Mokka — Regalos, cestas e instituciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="pages.js" defer></script>
+</head>
+<body class="inner-page gifts-page">
+<div class="announcement">UNIVERSO MOKKA <span class="star">✦</span> SABORES PARA DESCUBRIR</div>
+<header class="site-header" id="inicio">
+  <div class="nav-shell wrap">
+    <a class="brand" href="index.html" aria-label="Mokka, volver a Alfajores y dulces"><img src="assets/mokka-logo-premium.svg" alt="Mokka" width="184" height="94"></a>
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="index.html">Alfajores y dulces</a>
+      <a href="delicatessen.html">Delicatessen</a>
+      <a href="regalos.html" class="active" aria-current="page">Regalos, cestas e instituciones</a>
+      <a href="index.html#descubri">Tu alfajor ideal</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="icon-btn" href="index.html#alfajores" aria-label="Explorar el catálogo de alfajores" title="Ver alfajores">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.6" cy="10.6" r="6.8"/><path d="m16 16 5 5"/></svg>
+      </a>
+      <button id="menu-toggle" class="icon-btn menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav" type="button">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden>
+    <a href="index.html">Alfajores y dulces</a>
+    <a href="delicatessen.html">Delicatessen</a>
+    <a href="regalos.html" aria-current="page">Regalos, cestas e instituciones</a>
+    <a href="index.html#descubri">Tu alfajor ideal</a>
+  </nav>
+</header>
+<main>
+  <section class="editorial-hero gifts-hero" aria-labelledby="gifts-title">
+    <div class="editorial-hero-media"><img src="https://images.unsplash.com/photo-1769775264026-fbc4e974dea8?auto=format&fit=crop&w=1800&q=85" alt="Caja ilustrativa con selección de chocolates para regalar" fetchpriority="high" width="1200" height="900"></div>
+    <div class="editorial-hero-copy">
+      <div class="editorial-copy-inner">
+        <span class="eyebrow">PARA CADA OCASIÓN, ALGO ESPECIAL</span>
+        <h1 id="gifts-title">Regalos, cestas<br><em>e instituciones.</em></h1>
+        <p>Un regalo bien pensado dice mucho. Propuestas dulces para personas, equipos, celebraciones y encuentros especiales.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-hot" href="#propuestas">Explorá las propuestas <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-hero-secondary" href="index.html">Alfajores y dulces <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="editorial-section wrap section" id="propuestas">
+    <div class="section-heading"><div><span class="eyebrow mini">UN GESTO QUE SE RECUERDA</span><h2>El detalle hace la diferencia.</h2><p>Tres maneras de compartir algo rico. Las propuestas son conceptuales y se definirán con el catálogo.</p></div></div>
+    <div class="gift-offerings">
+      <article class="offering-card" id="regalos"><span class="offering-index">01</span><h3>Regalos personales</h3><p>Un detalle para un cumpleaños, un agradecimiento o simplemente porque sí.</p><a href="#consulta" class="offering-link">Preparar una consulta <span aria-hidden="true">↗</span></a></article>
+      <article class="offering-card" id="cestas"><span class="offering-index">02</span><h3>Cestas gourmet</h3><p>Combinaciones de sabores y presentaciones para momentos especiales.</p><a href="#consulta" class="offering-link">Preparar una consulta <span aria-hidden="true">↗</span></a></article>
+      <article class="offering-card" id="instituciones"><span class="offering-index">03</span><h3>Empresas e instituciones</h3><p>Atenciones para equipos, clientes, eventos y fechas importantes.</p><a href="#consulta" class="offering-link">Preparar una consulta <span aria-hidden="true">↗</span></a></article>
+    </div>
+  </section>
+  <section class="gift-inquiry-section" id="consulta">
+    <div class="wrap inquiry-layout">
+      <div class="inquiry-intro"><span class="eyebrow mini">TU IDEA, A TU MEDIDA</span><h2>Contanos qué tenés <em>en mente.</em></h2><p>Armá un borrador de consulta con los datos principales. Podés copiarlo y compartirlo por tu canal habitual cuando esté disponible.</p><p class="inquiry-notice">Esta página es una prueba: el formulario no envía ni almacena tus datos.</p></div>
+      <form id="gift-inquiry-form" class="inquiry-form">
+        <label for="gift-type">Tipo de propuesta</label>
+        <select id="gift-type" name="tipo" required><option value="Regalo personal">Regalo personal</option><option value="Cesta gourmet">Cesta gourmet</option><option value="Empresa o institución">Empresa o institución</option></select>
+        <label for="gift-quantity">Cantidad aproximada</label>
+        <input id="gift-quantity" name="cantidad" type="number" min="1" max="100000" placeholder="Por ejemplo, 20" required>
+        <label for="gift-occasion">Ocasión o idea</label>
+        <textarea id="gift-occasion" name="ocasion" rows="3" maxlength="1000" placeholder="Contanos para quién es y qué te gustaría incluir…"></textarea>
+        <button type="submit" class="btn btn-hot">Copiar mi consulta <span aria-hidden="true">↗</span></button>
+        <p id="gift-form-status" role="status" aria-live="polite">Solo se copiará el texto. No se enviarán datos.</p>
+      </form>
+    </div>
+  </section>
+  <section class="cross-entry-wrap wrap section">
+    <a class="cross-entry cross-entry-sweets" href="index.html"><span class="eyebrow mini">VOLVÉ A LOS CLÁSICOS</span><strong>Alfajores y dulces</strong><span class="cross-entry-action">Conocé las marcas <b aria-hidden="true">↗</b></span></a>
+    <a class="cross-entry cross-entry-deli" href="delicatessen.html"><span class="eyebrow mini">MÁS PARA SORPRENDER</span><strong>Delicatessen</strong><span class="cross-entry-action">Explorá otro universo de sabores <b aria-hidden="true">↗</b></span></a>
+  </section>
+</main>
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about"><div class="footer-logo">Mokka<span class="footer-smile"></span></div><p>Una selección de dulces, descubrimientos y pequeños placeres para compartir.</p></div>
+    <div><h3>Descubrí</h3><a href="index.html">Alfajores y dulces</a><a href="delicatessen.html">Delicatessen</a><a href="index.html#descubri">Tu alfajor ideal</a></div>
+    <div><h3>Para compartir</h3><a href="regalos.html">Regalos</a><a href="regalos.html#cestas">Cestas</a><a href="regalos.html#instituciones">Instituciones</a></div>
+    <div class="footer-news"><h3>Un proyecto en construcción</h3><p>Esta es una demostración de Mokka. Las propuestas y los productos definitivos se incorporarán cuando esté confirmado el catálogo.</p></div>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 Mokka · Sitio de prueba</span><span>Argentina · Hecho para compartir</span></div>
+</footer>
+</body>
+</html>
