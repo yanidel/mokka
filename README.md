@@ -85,6 +85,13 @@ Las fotos de **Zafarrancho** y **Saboreé** ya estaban guardadas en el repositor
 
 Necesita inventario real: marcas, variedades, EAN/SKU, fotos con derechos, presentación, gramaje, precios y stock. Estos metadatos serán la base de los filtros. Reemplazar favoritos por carrito/checkout nativos de Tiendanube y comprobar la compra en staging. No hay tokens ni credenciales en este prototipo.
 
+## Precios de productos conocidos
+
+- **Merengo — caja de 12 alfajores: $28.000 IVA incluido**, precio de venta previamente definido por Mokka (sin incluir envío). Se agregó como una referencia separada en `app.js` para no confundir una caja de 12 con una unidad suelta.
+- **Zafarrancho — caja x12: $21.000** era una referencia de precio minorista observada, **no** un precio de venta aprobado por Mokka; no está publicado como precio propio.
+- No se cuenta con lista de precios ni formatos confirmados de Arocense, Las Dos Rosas, Isla del Sabor, Saboreé, La Quinta, El Cordobés, Catamarqueños y Tucumanos. Sus precios siguen pendientes y no deben inventarse.
+- Los precios de los pedidos reales deberán venir del catálogo de Tiendanube, no del prototipo local.
+
 ## Conexión a la tienda real
 
 Editá `shop-links.js` y asigná **la URL real del catálogo de Mokka en Tiendanube** a `MOKKA_TIENDANUBE_CATALOG_URL`. Los botones marcados `data-shop-link` de la portada y de la landing Rosario pasarán automáticamente a esa dirección, conservando parámetros UTM y click IDs. Mientras la URL esté vacía, se abre el catálogo ilustrativo de `index.html`, **sin checkout**. Nunca usar la URL de otra empresa.
