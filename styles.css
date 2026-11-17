@@ -1408,3 +1408,48 @@ body h3 em{
   .deli-related-info{padding:11px}
   .deli-related-info strong{font-size:16px}
 }
+
+
+/* Zafarrancho merchandise lives outside Delicatessen's food filters. */
+.deli-merch-section{padding-top:55px;padding-bottom:80px}
+.deli-merch-section .section-heading p{max-width:780px;line-height:1.75}
+.deli-merch-jump{display:inline-flex;align-items:center;justify-content:center;min-height:43px;font:750 12px/1.3 var(--body-font);border:1px solid #d2b496;color:#795134;padding:10px 14px;border-radius:99px;background:#fff8ee;white-space:nowrap}
+.deli-merch-jump:hover{background:#efe0cc}
+.deli-merch-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:1020px}
+.deli-merch-card{min-width:0;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);overflow:hidden;background:#fffdf9;border:1px solid #e6daca;border-radius:17px}
+.deli-merch-visual{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:15px;background:linear-gradient(145deg,#eff4f7,#e2e9ec);padding:20px 15px;min-height:260px}
+.deli-merch-illustration{display:grid;place-items:center;width:106px;height:106px;font-size:66px;line-height:1;border-radius:50%;background:#fffdf9;border:1px solid #d5e0e6}
+.deli-merch-photo-note{max-width:180px;color:#64748a;font:700 10px/1.55 var(--body-font)}
+.deli-merch-info{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:11px;padding:23px 21px}
+.deli-merch-info h3{font:900 clamp(20px,2vw,29px)/1.14 "Lato",Arial,sans-serif;margin:0;letter-spacing:-.027em;color:#172c44}
+.deli-merch-info>p{font:500 12px/1.65 var(--body-font);color:#696159;margin:0;flex:1}
+.deli-merch-info .deli-product-tags{margin:0}
+.deli-merch-info .deli-product-price{font-size:26px}
+.deli-merch-info .deli-product-details-link{margin-top:0}
+.deli-detail-photo-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;max-width:80%;text-align:center}
+.deli-detail-photo-placeholder>span{font-size:110px;line-height:1.25}
+.deli-detail-photo-placeholder p{max-width:280px;font:700 12px/1.7 var(--body-font);color:#677387;margin:0}
+.deli-merch-related-icon{display:flex;align-items:center;justify-content:center;min-height:100%;background:#e9eff1;font-size:74px}
+@media(max-width:1100px){
+ .deli-merch-card{grid-template-columns:1fr}
+ .deli-merch-visual{min-height:190px}
+ .deli-merch-info{flex:1}
+}
+@media(max-width:850px){
+ .deli-merch-grid{max-width:none}
+ .deli-merch-jump{margin-top:7px}
+}
+@media(max-width:560px){
+ .deli-merch-section.wrap{padding:48px 9px 60px}
+ .deli-merch-section>.section-heading{padding-inline:9px}
+ .deli-merch-grid{gap:8px}
+ .deli-merch-card{border-radius:12px}
+ .deli-merch-visual{min-height:150px;padding:16px 9px;gap:9px}
+ .deli-merch-illustration{width:78px;height:78px;font-size:45px}
+ .deli-merch-photo-note{font-size:9px}
+ .deli-merch-info{padding:13px 10px;gap:8px}
+ .deli-merch-info h3{font-size:19px}
+ .deli-merch-info>p{font-size:11px}
+ .deli-merch-info .deli-product-price{font-size:21px}
+ .deli-detail-photo-placeholder>span{font-size:76px}
+}
