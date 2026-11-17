@@ -1223,3 +1223,60 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
   }
   .deli-hero .editorial-hero-media img{object-position:46% 50%}
 }
+
+
+/* Typography experiment: Lato Heavy across the Mokka website headings.
+   Keep Manrope for descriptions, labels and navigation. */
+:root{
+  --heading-font:"Lato",Arial,Helvetica,sans-serif;
+}
+body h1,
+body h2,
+body h3{
+  font-family:"Lato",Arial,Helvetica,sans-serif;
+  font-weight:900;
+  letter-spacing:-.04em;
+}
+body h1 em,
+body h2 em,
+body h3 em{
+  font-family:"Lato",Arial,Helvetica,sans-serif;
+  font-weight:900;
+  font-style:italic;
+  letter-spacing:-.035em;
+}
+.brand-title,
+.crosslink-card strong,
+.cross-entry strong,
+.local-brand-card strong,
+.detail-related-copy strong{
+  font-family:"Lato",Arial,Helvetica,sans-serif;
+  font-weight:900;
+  letter-spacing:-.035em;
+}
+
+/* Long 'Delicatessen.' heading: deliberately smaller so it fits
+   the split hero and remains fully readable on narrow phones. */
+.deli-hero .editorial-hero-copy h1{
+  font-family:"Lato",Arial,Helvetica,sans-serif;
+  font-weight:900;
+  font-size:clamp(38px,4vw,64px);
+  line-height:1.03;
+  letter-spacing:-.052em;
+  max-width:100%;
+  overflow-wrap:break-word;
+  margin:20px 0 26px;
+}
+@media(max-width:850px){
+  .deli-hero .editorial-hero-copy h1{
+    font-size:clamp(38px,7.4vw,62px);
+    line-height:1.05;
+  }
+}
+@media(max-width:560px){
+  .deli-hero .editorial-hero-copy h1{
+    font-size:clamp(30px,8.25vw,46px);
+    line-height:1.06;
+    margin:12px 0 17px;
+  }
+}
