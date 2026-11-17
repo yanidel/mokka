@@ -26,6 +26,7 @@ const sources={
  tucuman:"https://alfajoresdeltucuman.com.ar/productos"
 };
 const products=[
+ {id:"mer-box12",brand:"Merengo",name:"Caja de 12 alfajores Merengo",desc:"Presentación por 12 unidades. La composición exacta de la caja y el stock deben confirmarse antes de ofrecer la compra.",textura:[],relleno:[],cobertura:[],source:sources.merengo,region:"Santa Fe",price:28000,priceUnit:"Caja x12",priceStatus:"Precio de venta definido"},
  {id:"mer-s",brand:"Merengo",name:"Santafesino tradicional",desc:"Capas de masa fina y dulce de leche con cobertura blanca de merengue.",textura:["capas"],relleno:["ddl"],cobertura:["merengue"],source:sources.merengo,region:"Santa Fe"},
  {id:"mer-c",brand:"Merengo",name:"Alfajor de chocolate",desc:"Variedad de chocolate de la línea Merengo.",textura:[],relleno:["ddl"],cobertura:["chocolate"],source:sources.merengo,region:"Santa Fe"},
  {id:"aro-r",brand:"Arocense",name:"Especial nuez y ron",desc:"Alfajor artesanal glaseado con nueces; la foto corresponde a la variedad con ron.",textura:[],relleno:[],cobertura:["glaseado"],source:sources.arocense,region:"Arocena, Santa Fe"},
@@ -82,6 +83,7 @@ function renderProducts(){
       '<div class="product-body"><span class="product-brand">'+p.brand+' · '+p.region+'</span><h3 class="product-title">'+p.name+'</h3><p class="product-desc">'+p.desc+'</p>'+
       '<div class="trait-list">'+tags.map(t=>'<span>'+t+'</span>').join("")+'</div>'+
       (p.caution?'<p class="catalog-caution">'+p.caution+'</p>':"")+
+      (Number.isFinite(p.price)?'<div class="product-known-price"><strong>'+new Intl.NumberFormat("es-AR",{style:"currency",currency:"ARS",maximumFractionDigits:0}).format(p.price)+'</strong><span> · '+p.priceUnit+' · IVA incluido</span></div>':'<p class="catalog-caution">Precio de venta pendiente</p>')+
       '<div class="product-bottom"><a class="source-link" href="'+p.source+'" rel="noopener noreferrer" target="_blank">Ver fuente ↗</a><button type="button" class="add-cart" data-add="'+p.id+'">'+(saved.includes(p.id)?"♥ Guardado":"♡ Guardar")+'</button></div>'+
       '</div></article>';
   }).join(""):'<div class="empty-products"><h3>No encontramos una coincidencia exacta</h3><p>Probá con menos filtros o una combinación diferente.</p><button type="button" class="btn btn-navy" id="empty-reset">Ver todas las variedades →</button></div>';
@@ -90,7 +92,7 @@ function renderProducts(){
   const count=Object.values(prefs).reduce((n,s)=>n+s.size,0);
   const filters=[brandFilter?"Marca: "+brandFilter:"",count?count+" preferencias":"",searchFilter?"Búsqueda: "+searchFilter:""].filter(Boolean);
   const chip=$("#active-filter");chip.hidden=!filters.length;chip.textContent=filters.join(" · ");
-  $("#catalog-subtitle").textContent=matchesList.length+" variedades documentadas"+(filters.length?" que coinciden con tu elección":" para explorar")+". Sin precios ni stock confirmados.";
+  $("#catalog-subtitle").textContent=matchesList.length+" referencias y presentaciones"+(filters.length?" que coinciden con tu elección":" para explorar")+". Los precios solo se muestran cuando están definidos; el stock sigue pendiente.";
   $$(".brand-card").forEach(btn=>btn.classList.toggle("selected",btn.dataset.brand===brandFilter));
 }
 function scrollCatalog(){document.getElementById("alfajores").scrollIntoView({behavior:"smooth",block:"start"});}
