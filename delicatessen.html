@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fbfaf7">
+  <meta name="description" content="Delicatessen en Mokka: una selección gourmet en preparación, chocolates, dulces y especialidades para compartir.">
+  <title>Mokka — Delicatessen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="pages.js" defer></script>
+</head>
+<body class="inner-page delicatessen-page">
+<div class="announcement">UNIVERSO MOKKA <span class="star">✦</span> SABORES PARA DESCUBRIR</div>
+<header class="site-header" id="inicio">
+  <div class="nav-shell wrap">
+    <a class="brand" href="index.html" aria-label="Mokka, volver a Alfajores y dulces"><img src="assets/mokka-logo-premium.svg" alt="Mokka" width="184" height="94"></a>
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="index.html">Alfajores y dulces</a>
+      <a href="delicatessen.html" class="active" aria-current="page">Delicatessen</a>
+      <a href="regalos.html">Regalos, cestas e instituciones</a>
+      <a href="index.html#descubri">Tu alfajor ideal</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="icon-btn" href="index.html#alfajores" aria-label="Explorar el catálogo de alfajores" title="Ver alfajores">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.6" cy="10.6" r="6.8"/><path d="m16 16 5 5"/></svg>
+      </a>
+      <button id="menu-toggle" class="icon-btn menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav" type="button">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden>
+    <a href="index.html">Alfajores y dulces</a>
+    <a href="delicatessen.html" aria-current="page">Delicatessen</a>
+    <a href="regalos.html">Regalos, cestas e instituciones</a>
+    <a href="index.html#descubri">Tu alfajor ideal</a>
+  </nav>
+</header>
+<main>
+  <section class="editorial-hero deli-hero" aria-labelledby="deli-title">
+    <div class="editorial-hero-media"><img src="https://images.unsplash.com/photo-1767510533183-425731f088a7?auto=format&fit=crop&w=1800&q=85" alt="Caja ilustrativa con selección de chocolates gourmet" fetchpriority="high" width="1200" height="900"></div>
+    <div class="editorial-hero-copy">
+      <div class="editorial-copy-inner">
+        <span class="eyebrow">PEQUEÑOS PLACERES, GRANDES HALLAZGOS</span>
+        <h1 id="deli-title">Delicatessen<span class="period">.</span></h1>
+        <p>Un universo de sabores para regalarte un momento distinto. Chocolates, dulces y especialidades elegidas con ganas de sorprender.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-hot" href="#seleccion">Conocé la selección <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-hero-secondary" href="index.html">Dulces <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="editorial-section wrap section" id="seleccion">
+    <div class="section-heading"><div><span class="eyebrow mini">UN MUNDO POR DESCUBRIR</span><h2>Lo rico tiene muchas formas.</h2><p>Estamos preparando la selección Delicatessen de Mokka.</p></div></div>
+    <div class="editorial-tiles">
+      <article class="editorial-tile"><div class="tile-visual tile-choco"><img src="https://images.unsplash.com/photo-1767510533183-425731f088a7?auto=format&fit=crop&w=900&q=80" alt="Chocolates gourmet ilustrativos" loading="lazy"></div><div class="tile-caption"><span>01 / LA TENTACIÓN</span><h3>Chocolates y bocados</h3><p>Una selección pensada para los amantes del chocolate.</p></div></article>
+      <article class="editorial-tile"><div class="tile-visual tile-sweets"><img src="https://images.unsplash.com/photo-1757522744922-1708afba3917?auto=format&fit=crop&w=900&q=80" alt="Repostería dulce ilustrativa" loading="lazy"></div><div class="tile-caption"><span>02 / LO ARTESANAL</span><h3>Dulces y especialidades</h3><p>Sabores para disfrutar solos, con café o para compartir.</p></div></article>
+      <article class="editorial-tile"><div class="tile-visual tile-gifting"><img src="https://images.unsplash.com/photo-1769775264026-fbc4e974dea8?auto=format&fit=crop&w=900&q=80" alt="Selección gourmet de regalo ilustrativa" loading="lazy"></div><div class="tile-caption"><span>03 / PARA COMPARTIR</span><h3>Selecciones especiales</h3><p>Pequeños descubrimientos reunidos para una gran ocasión.</p></div></article>
+    </div>
+    <p class="editorial-disclaimer">Imágenes ilustrativas. El catálogo, las marcas, los precios y la disponibilidad de Delicatessen todavía no están confirmados.</p>
+  </section>
+  <section class="cross-entry-wrap wrap section">
+    <a class="cross-entry cross-entry-sweets" href="index.html"><span class="eyebrow mini">¿SOMOS DE DULCE?</span><strong>Alfajores y dulces</strong><span class="cross-entry-action">Volver a los clásicos regionales <b aria-hidden="true">↗</b></span></a>
+    <a class="cross-entry cross-entry-gifts" href="regalos.html"><span class="eyebrow mini">UN DETALLE DIFERENTE</span><strong>Regalos, cestas e instituciones</strong><span class="cross-entry-action">Descubrí las propuestas <b aria-hidden="true">↗</b></span></a>
+  </section>
+</main>
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about"><div class="footer-logo">Mokka<span class="footer-smile"></span></div><p>Una selección de dulces, descubrimientos y pequeños placeres para compartir.</p></div>
+    <div><h3>Descubrí</h3><a href="index.html">Alfajores y dulces</a><a href="delicatessen.html">Delicatessen</a><a href="index.html#descubri">Tu alfajor ideal</a></div>
+    <div><h3>Para compartir</h3><a href="regalos.html">Regalos</a><a href="regalos.html#cestas">Cestas</a><a href="regalos.html#instituciones">Instituciones</a></div>
+    <div class="footer-news"><h3>Un proyecto en construcción</h3><p>Esta es una demostración de Mokka. Las propuestas y los productos definitivos se incorporarán cuando esté confirmado el catálogo.</p></div>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 Mokka · Sitio de prueba</span><span>Argentina · Hecho para compartir</span></div>
+</footer>
+</body>
+</html>
