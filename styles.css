@@ -809,3 +809,19 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
 @media(prefers-reduced-motion:reduce){
   .whatsapp-float{transition:none}
 }
+
+
+/* WhatsApp: icon-only floating button on all screen sizes. */
+.whatsapp-float{
+  width:54px;
+  height:54px;
+  min-height:54px;
+  padding:0;
+  gap:0;
+  border-radius:50%;
+}
+.whatsapp-float .whatsapp-label{display:none}
+.whatsapp-float .whatsapp-icon{width:29px;height:29px}
+@media(max-width:560px){
+  .whatsapp-float{width:53px;height:53px;min-height:53px;padding:0}
+}
