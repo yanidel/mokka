@@ -12,9 +12,9 @@ Tres páginas HTML separadas con navegación compartida en escritorio y móvil:
 | Delicatessen | `delicatessen.html` | Introducción premium a la sección gourmet (selección en preparación); segundo botón: **Dulces ↗** |
 | Regalos, cestas e instituciones | `regalos.html` | Regalos personales, cestas y opciones corporativas/institucionales; entrada propia en el menú |
 
-`pages.js` controla el menú móvil de Delicatessen y Regalos, y permite **copiar** un borrador de consulta de regalos sin almacenar ni enviar datos. `app.js` sigue operando únicamente el buscador, los filtros y la lista local de favoritos de `index.html`. Las tres páginas comparten `styles.css` y el logo.
+`pages.js` controla el menú móvil de Delicatessen, Regalos y Rosario, y permite **copiar** un borrador de consulta de regalos sin almacenar ni enviar datos. `app.js` sigue operando únicamente el buscador, los filtros y la lista local de favoritos de `index.html`. Las tres páginas comparten `styles.css` y el logo.
 
-Los enlaces son **relativos** (`index.html`, `delicatessen.html`, `regalos.html`) para que el sitio funcione publicado como raíz o bajo una subcarpeta de GitHub Pages. No hay pasarela de pago ni formulario conectado a un servidor.
+Los enlaces son **relativos** (`index.html`, `delicatessen.html`, `regalos.html`) para que el sitio funcione publicado como raíz o bajo una subcarpeta de GitHub Pages. No hay pasarela de pago ni formulario conectado a un servidor en este prototipo. El botón flotante de WhatsApp aparece **solo en `regalos.html`**.
 
 ### Fotografía ilustrativa (secciones nuevas)
 
@@ -24,12 +24,12 @@ Los enlaces son **relativos** (`index.html`, `delicatessen.html`, `regalos.html`
 
 ## Landing de Rosario — campaña local (noviembre 2026)
 
-- **`rosario.html`**: landing específica para anuncios dirigidos a Rosario. Hero fotográfico con CTA a WhatsApp, propuesta de entrega express, retiro coordinado en la Terminal, referencias de marcas, pasos de compra y preguntas frecuentes.
+- **`rosario.html`**: landing específica para anuncios dirigidos a Rosario. Hero fotográfico con enlace al catálogo online (preparado para Tiendanube), propuesta de entrega express, retiro coordinado en la Terminal, referencias de marcas y preguntas frecuentes.
 - **`_redirects`**: alias `/rosario` → `/rosario.html` para Netlify. En GitHub Pages se accede usando `rosario.html`.
 - El sitio general mantiene las tres páginas de categoría. La portada incluye un vínculo discreto a entrega express en Rosario y los otros enlaces están en anuncio, menú móvil y pie.
-- **Operación inicial**: WhatsApp, no checkout. Antes de confirmar cada pedido se debe verificar variedad, tarifa de entrega, disponibilidad de mensajería y dirección. No se promete despacho en un tiempo fijo ni disponibilidad de repartidores las 24 horas, aunque el local se encuentra abierto las 24 horas.
-- **Publicidad**: dirigir los anuncios locales a `/rosario?utm_source=...&utm_campaign=...`; instalar GA4/Meta Pixel y medir clics en WhatsApp (leads) antes de asignar presupuesto. El sitio no incorpora códigos publicitarios nuevos ni activa campañas por sí mismo.
-- **Para habilitar ventas automatizadas**: conectar catálogo, stock, precios y checkout de Tiendanube; configurar una entrega personalizada para las zonas habilitadas, y definir el costo/cuando corresponde a confirmar por WhatsApp.
+- **Compras**: los pedidos de Alfajores y dulces, Delicatessen y Rosario se harán mediante Tiendanube, NO por WhatsApp. En el prototipo actual los enlaces muestran el catálogo de prueba, sin pagos. Se requiere conectar el URL real de Mokka en `shop-links.js` y luego el checkout de Tiendanube. El local de la Terminal abre 24 horas; el horario anunciado para pedidos express es hasta las 21 h y está sujeto a mensajería.
+- **Publicidad**: dirigir anuncios locales a `/rosario?utm_source=...&utm_campaign=...`; configurar GA4/Meta Pixel en la tienda Tiendanube y medir compras reales, no clics de WhatsApp. El enlace a tienda (cuando se configura) arrastra parámetros UTM y click IDs de campaña. El sitio no incorpora códigos publicitarios nuevos ni activa campañas por sí mismo.
+- **Para habilitar ventas automatizadas**: definir la URL oficial de Mokka en `shop-links.js`, conectar catálogo, stock, precios y checkout de Tiendanube, y configurar entrega express por zona, retiros y horarios en el checkout.
 
 ## Previsualización
 
@@ -83,3 +83,9 @@ Las fotos de **Zafarrancho** y **Saboreé** ya estaban guardadas en el repositor
 ## Adaptación futura a Tiendanube
 
 Necesita inventario real: marcas, variedades, EAN/SKU, fotos con derechos, presentación, gramaje, precios y stock. Estos metadatos serán la base de los filtros. Reemplazar favoritos por carrito/checkout nativos de Tiendanube y comprobar la compra en staging. No hay tokens ni credenciales en este prototipo.
+
+## Conexión a la tienda real
+
+Editá `shop-links.js` y asigná **la URL real del catálogo de Mokka en Tiendanube** a `MOKKA_TIENDANUBE_CATALOG_URL`. Los botones marcados `data-shop-link` de la portada y de la landing Rosario pasarán automáticamente a esa dirección, conservando parámetros UTM y click IDs. Mientras la URL esté vacía, se abre el catálogo ilustrativo de `index.html`, **sin checkout**. Nunca usar la URL de otra empresa.
+
+El WhatsApp se reserva para **Regalos, cestas e instituciones**; `tracking.js` únicamente se carga en `regalos.html` para instrumentar consultas de regalos. Las compras del resto deben medirse mediante las integraciones de GA4 y Ads de Tiendanube.
