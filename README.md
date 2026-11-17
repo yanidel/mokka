@@ -2,6 +2,26 @@
 
 Tienda de alfajores y delicatessen: prototipo **HTML/CSS/JavaScript** independiente, pensado para adaptar a Tiendanube. Español de Argentina; diseño premium con marfil, azul oscuro y caramelo.
 
+## Navegación del sitio (noviembre de 2026)
+
+Tres páginas HTML separadas con navegación compartida en escritorio y móvil:
+
+| Página | Archivo | Hero / enlace principal |
+| --- | --- | --- |
+| Alfajores y dulces | `index.html` | Catálogo regional y buscador de alfajores; segundo botón del hero: **Delicatessen ↗** |
+| Delicatessen | `delicatessen.html` | Introducción premium a la sección gourmet (selección en preparación); segundo botón: **Dulces ↗** |
+| Regalos, cestas e instituciones | `regalos.html` | Regalos personales, cestas y opciones corporativas/institucionales; entrada propia en el menú |
+
+`pages.js` controla el menú móvil de Delicatessen y Regalos, y permite **copiar** un borrador de consulta de regalos sin almacenar ni enviar datos. `app.js` sigue operando únicamente el buscador, los filtros y la lista local de favoritos de `index.html`. Las tres páginas comparten `styles.css` y el logo.
+
+Los enlaces son **relativos** (`index.html`, `delicatessen.html`, `regalos.html`) para que el sitio funcione publicado como raíz o bajo una subcarpeta de GitHub Pages. No hay pasarela de pago ni formulario conectado a un servidor.
+
+### Fotografía ilustrativa (secciones nuevas)
+
+- Delicatessen: fotografía ilustrativa de una caja de chocolates de Madeline Liu, publicada con licencia Unsplash: https://unsplash.com/photos/Fzu0ot7AThE
+- Regalos: fotografía ilustrativa de chocolates para regalo de Eunkwang Choi, publicada con licencia Unsplash: https://unsplash.com/photos/p4E1o15SQqc
+- Las imágenes de estas dos secciones **no representan stock confirmado de Mokka**. Deberán sustituirse por fotos autorizadas de los productos reales para el lanzamiento.
+
 ## Previsualización
 
 Abrí `index.html` o publicá `main` en Netlify o GitHub Pages. La publicación automática depende de la configuración del hosting; actualizar el repositorio **no confirma** que se haya publicado el deploy.
