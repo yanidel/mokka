@@ -1183,3 +1183,43 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
 @media(min-width:561px) and (max-width:1050px){
   .detail-services{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+
+/* Delicatessen hero: same dimensions as the Alfajores homepage hero. */
+@media(min-width:851px){
+  .deli-hero{
+    grid-template-columns:48% 52%;
+    min-height:615px;
+  }
+  .deli-hero .editorial-hero-media{min-height:615px}
+}
+.deli-hero .editorial-hero-media{background:#9b633c}
+.deli-hero .editorial-hero-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:48% 50%;
+}
+@media(max-width:850px){
+  .deli-hero{
+    height:calc(100vh - 76px);
+    height:calc(100svh - 76px);
+    min-height:560px;
+    max-height:800px;
+  }
+  .deli-hero .editorial-hero-media{
+    min-height:0;
+    height:100%;
+  }
+  .deli-hero .editorial-hero-media img{object-position:47% 46%}
+}
+@media(max-width:560px){
+  .deli-hero{
+    height:calc(100vh - 66px);
+    height:calc(100svh - 66px);
+    min-height:540px;
+    max-height:730px;
+  }
+  .deli-hero .editorial-hero-media img{object-position:46% 50%}
+}
