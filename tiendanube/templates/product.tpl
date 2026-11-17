@@ -18,6 +18,8 @@
       <div class="col-12 col-md-5 mokka-native-product__purchase">
         {# Native title, price, promos, variations, stock, quantity, shipping, payment and add-to-cart #}
         {% include 'snipplets/product/product-form.tpl' %}
+        {# Show the same texture, filling and coating taxonomy used in the Mokka product finder. #}
+        {% include 'snipplets/mokka-product-traits.tpl' %}
         {% include 'snipplets/mokka-product-benefits.tpl' %}
       </div>
     </div>
