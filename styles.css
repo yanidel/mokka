@@ -1077,7 +1077,7 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
 .detail-actions .btn-hero-secondary{border-color:#d2b99f}
 .detail-legal{font:500 11px/1.65 var(--body-font);color:#807567;margin:14px 0}
 .detail-feedback{font:750 11px var(--body-font);color:#4a7655;min-height:20px}
-.detail-services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;padding:24px 0;border-top:1px solid #e8ded3;border-bottom:1px solid #e8ded3}
+.detail-services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;padding:24px 0;border-top:1px solid #e8ded3;border-bottom:1px solid #e8ded3}
 .detail-services>div{padding:15px 16px;background:#f2ece2;border-radius:13px;display:flex;flex-direction:column;gap:9px}
 .detail-services strong{font:750 13px/1.5 var(--body-font);color:#213249}
 .detail-services span{font:500 11px/1.6 var(--body-font);color:#766a5e}
@@ -1177,4 +1177,9 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
   .detail-attribute-group{grid-template-columns:1fr;gap:8px;padding:13px}
   .detail-attribute-group h3{font-size:17px}
   .detail-attribute-tag{font-size:11px;padding:7px 10px}
+}
+
+/* Delivery benefits: four cards on desktop, comfortable on tablets/phones. */
+@media(min-width:561px) and (max-width:1050px){
+  .detail-services{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
