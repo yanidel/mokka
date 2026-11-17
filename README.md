@@ -22,6 +22,15 @@ Los enlaces son **relativos** (`index.html`, `delicatessen.html`, `regalos.html`
 - Regalos: fotografía ilustrativa de chocolates para regalo de Eunkwang Choi, publicada con licencia Unsplash: https://unsplash.com/photos/p4E1o15SQqc
 - Las imágenes de estas dos secciones **no representan stock confirmado de Mokka**. Deberán sustituirse por fotos autorizadas de los productos reales para el lanzamiento.
 
+## Landing de Rosario — campaña local (noviembre 2026)
+
+- **`rosario.html`**: landing específica para anuncios dirigidos a Rosario. Hero fotográfico con CTA a WhatsApp, propuesta de entrega express, retiro coordinado en la Terminal, referencias de marcas, pasos de compra y preguntas frecuentes.
+- **`_redirects`**: alias `/rosario` → `/rosario.html` para Netlify. En GitHub Pages se accede usando `rosario.html`.
+- El sitio general mantiene las tres páginas de categoría. La portada incluye un vínculo discreto a entrega express en Rosario y los otros enlaces están en anuncio, menú móvil y pie.
+- **Operación inicial**: WhatsApp, no checkout. Antes de confirmar cada pedido se debe verificar variedad, tarifa de entrega, disponibilidad de mensajería y dirección. No se promete despacho en un tiempo fijo ni disponibilidad de repartidores las 24 horas, aunque el local se encuentra abierto las 24 horas.
+- **Publicidad**: dirigir los anuncios locales a `/rosario?utm_source=...&utm_campaign=...`; instalar GA4/Meta Pixel y medir clics en WhatsApp (leads) antes de asignar presupuesto. El sitio no incorpora códigos publicitarios nuevos ni activa campañas por sí mismo.
+- **Para habilitar ventas automatizadas**: conectar catálogo, stock, precios y checkout de Tiendanube; configurar una entrega personalizada para las zonas habilitadas, y definir el costo/cuando corresponde a confirmar por WhatsApp.
+
 ## Previsualización
 
 Abrí `index.html` o publicá `main` en Netlify o GitHub Pages. La publicación automática depende de la configuración del hosting; actualizar el repositorio **no confirma** que se haya publicado el deploy.
