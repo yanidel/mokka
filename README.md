@@ -2,6 +2,14 @@
 
 Tienda de alfajores y delicatessen: prototipo **HTML/CSS/JavaScript** independiente, pensado para adaptar a Tiendanube. Español de Argentina; diseño premium con marfil, azul oscuro y caramelo.
 
+## Zafarrancho: sección de accesorios separados de los alimentos
+
+- El catálogo oficial de Zafarrancho tiene **cinco presentaciones de alfajores** y solo **dos productos no alfajores**: **Gorra Mundial ($10.000)** y **Stickers DTF UV ($5.000)**. No se encontraron alimentos adicionales para Delicatessen.
+- `delicatessen.html#zafarrancho` muestra **Modo Zafarrancho · Accesorios de marca** fuera del catálogo de Merengo; no se mezclan las gorras y stickers con las categorías alimenticias.
+- `zafarrancho-data.js` incluye los dos productos con enlaces oficiales, variantes de gorra y referencias de precio. Se integran a `delicatessen-producto.html?id=...` con páginas individuales y compra deshabilitada.
+- Las fotografías de accesorios no se insertaron porque no se verificaron URLs de imágenes estables. Se usan **placeholders explícitos**, con acceso a las fotos del fabricante en cada ficha.
+- [Investigación y fuentes oficiales](ZAFARRANCHO_EXTRAS.md). La inclusión comercial de accesorios y sus precios requiere confirmación y carga de productos en Tiendanube.
+
 ## Delicatessen: catálogo Merengo sin alfajores (17 noviembre 2026)
 
 - La landing `delicatessen.html` conserva su hero con Toblerone, pero ya **no** tiene las tarjetas genéricas de demostración. Ahora muestra **11 productos reales de Merengo**, con fotografías oficiales como referencias, presentación, descripción, etiquetas y precios online.
