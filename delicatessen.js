@@ -18,7 +18,7 @@
     const search=query.toLocaleLowerCase("es-AR").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
     const list=products.filter(p=>(category==="all"||p.category===category)&&[p.name,p.pack,p.categoryName,...p.tags].join(" ").toLocaleLowerCase("es-AR").normalize("NFD").replace(/[\u0300-\u036f]/g,"").includes(search));
     $("#deli-filter-title").textContent=selected?.name||"Todos los productos";
-    $("#deli-filter-description").textContent=selected?.description||"Once productos Merengo de cuatro categorías, sin alfajores.";
+    $("#deli-filter-description").textContent=selected?.description||"Once productos Merengo de tres categorías, sin alfajores.";
     $("#deli-result-count").textContent=list.length+" "+(list.length===1?"producto":"productos");
     document.querySelectorAll(".deli-category-pill").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.category===category)));
     grid.innerHTML=list.length?list.map(p=>{
