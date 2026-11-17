@@ -44,9 +44,42 @@
   image.addEventListener("error",()=>{
     image.hidden=true;image.parentElement.classList.add("photo-unavailable");
   },{once:true});
-  const names={capas:"Capas finas",suave:"Textura suave",maicena:"Maicena",ddl:"Dulce de leche",membrillo:"Frutal / membrillo",cayote:"Cayote",pistacho:"Pistacho",chocolate:"Chocolate",blanco:"Chocolate blanco",merengue:"Merengue",glaseado:"Glaseado / almíbar"};
-  const tags=[...new Set([...p.textura,...p.relleno,...p.cobertura])];
-  $("#detail-traits").innerHTML=tags.map(tag=>'<span>'+names[tag]+'</span>').join("");
+  // Exactly the same vocabulary and data groups as the "Tu alfajor ideal" finder.
+  const attributeGroups=[
+    {key:"textura",label:"1. La textura",values:{suave:["☁️","Suave"],capas:["🥮","Capas finas"],maicena:["🍪","Maicena"]}},
+    {key:"relleno",label:"2. El relleno",values:{ddl:["🍯","Dulce de leche"],membrillo:["🍐","Membrillo o fruta"],cayote:["🌿","Cayote"],pistacho:["🌰","Pistacho"]}},
+    {key:"cobertura",label:"3. La cobertura",values:{chocolate:["🍫","Chocolate"],blanco:["🤍","Chocolate blanco"],merengue:["🥚","Merengue"],glaseado:["✨","Glaseado / almíbar"]}}
+  ];
+  const attributesContainer=$("#detail-traits");
+  attributeGroups.forEach(group=>{
+    const section=document.createElement("section");
+    section.className="detail-attribute-group";
+    const heading=document.createElement("h3");
+    heading.textContent=group.label;
+    section.append(heading);
+    const values=document.createElement("div");
+    values.className="detail-attribute-values";
+    const known=[...new Set(Array.isArray(p[group.key])?p[group.key]:[])].filter(key=>group.values[key]);
+    if(known.length){
+      for(const key of known){
+        const tag=document.createElement("span");
+        tag.className="detail-attribute-tag";
+        const emoji=document.createElement("span");
+        emoji.className="detail-attribute-emoji";
+        emoji.setAttribute("aria-hidden","true");
+        emoji.textContent=group.values[key][0];
+        tag.append(emoji,document.createTextNode(group.values[key][1]));
+        values.append(tag);
+      }
+    }else{
+      const unknown=document.createElement("span");
+      unknown.className="detail-attribute-missing";
+      unknown.textContent="Por confirmar";
+      values.append(unknown);
+    }
+    section.append(values);
+    attributesContainer.append(section);
+  });
   const qty=$("#detail-quantity"),total=$("#detail-total");
   function updateQty(next){
     let q=Number(next);
