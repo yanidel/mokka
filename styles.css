@@ -585,3 +585,155 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
   }
   .hero-text p{max-width:100%}
 }
+
+
+/* MOKKA — three editorial entry pages (Alfajores, Delicatessen, Regalos). */
+.desktop-nav{gap:clamp(13px,1.9vw,28px)}
+.desktop-nav a{white-space:nowrap}
+.site-header .mobile-nav a[aria-current="page"]{color:#906641}
+.btn-hero-secondary{
+  background:transparent;
+  border:1.5px solid #be9770;
+  color:#513922;
+  box-shadow:none;
+}
+.btn-hero-secondary:hover{background:#f0e2d0;box-shadow:none}
+.site-crosslinks{padding-top:40px}
+.crosslinks-grid,.cross-entry-wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.crosslink-card,.cross-entry{
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;
+  min-height:240px;border-radius:19px;padding:30px 33px;
+  border:1px solid #ded3c5;
+  background:linear-gradient(130deg,#f9f3ea,#e8d8c2);
+  transition:transform .2s,box-shadow .2s;
+}
+.crosslink-card:hover,.cross-entry:hover{transform:translateY(-3px);box-shadow:0 14px 28px #21191112}
+.crosslink-gifts,.cross-entry-gifts{background:linear-gradient(125deg,#f5eee1,#e5dbc9)}
+.crosslink-kicker,.cross-entry .eyebrow{font-size:11px;letter-spacing:.13em;color:#806343;font-weight:750}
+.crosslink-card strong,.cross-entry strong{font:400 clamp(31px,3.3vw,49px)/1.1 var(--heading-font);letter-spacing:-.02em;max-width:520px}
+.crosslink-card strong em{font-family:var(--heading-font);font-style:italic;color:#846143}
+.crosslink-card>span:last-child,.cross-entry-action{
+  font-size:13px;color:#6c5a47;font-weight:600;line-height:1.6
+}
+.crosslink-card b,.cross-entry-action b{font-size:23px;font-weight:400;margin-left:9px;vertical-align:-2px}
+
+/* Entry pages have their own heroes, independent of homepage .hero overrides */
+.editorial-hero{display:grid;grid-template-columns:47% 53%;position:relative;min-height:615px;background:#f5eee5;overflow:hidden}
+.editorial-hero-media{grid-column:2;grid-row:1;min-height:615px;background:#b69a7b;overflow:hidden}
+.editorial-hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.editorial-hero-copy{
+  grid-column:1;grid-row:1;z-index:2;
+  padding:95px 6% 80px max(46px,calc((100vw - 1228px)/2));
+  background:linear-gradient(110deg,#fbf9f5 20%,#f3ebdd 100%);
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+}
+.editorial-copy-inner{max-width:580px}
+.editorial-hero-copy .eyebrow{font-size:10px;color:#85674a}
+.editorial-hero-copy h1{font:400 clamp(62px,5.8vw,100px)/.97 var(--heading-font);letter-spacing:-.035em;margin:24px 0 29px}
+.editorial-hero-copy h1 em{font:italic 400 inherit; color:#a16e45}
+.editorial-hero-copy p{color:#5d5b56;line-height:1.8;font-size:16px;max-width:460px;margin:0 0 22px}
+.editorial-hero .hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
+.editorial-section h2{max-width:740px}
+.editorial-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.editorial-tile{border:1px solid #e9e1d6;border-radius:19px;overflow:hidden;background:#fffdf9}
+.tile-visual{height:265px;overflow:hidden;background:#ede1d5}
+.tile-visual img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.editorial-tile:hover .tile-visual img{transform:scale(1.035)}
+.tile-caption{padding:25px 25px 28px}
+.tile-caption>span{font:700 10px var(--body-font);letter-spacing:.16em;color:#96704f}
+.tile-caption h3{font:400 31px/1.12 var(--heading-font);margin:14px 0;color:#162439}
+.tile-caption p{font-size:13px;line-height:1.75;color:#66615b;margin:0}
+.editorial-disclaimer{font-size:11px;color:#877d70;line-height:1.65;margin-top:23px}
+.cross-entry-wrap{padding-top:14px}
+.cross-entry{min-height:207px}
+.cross-entry strong{font-size:clamp(31px,3vw,43px)}
+.gift-offerings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.offering-card{border-radius:18px;border:1px solid #e6ddd1;background:#f8f4ec;min-height:290px;padding:30px 28px;display:flex;flex-direction:column;align-items:flex-start}
+.offering-index{font:400 28px var(--heading-font);color:#b38960;margin-bottom:27px}
+.offering-card h3{font:400 33px/1.08 var(--heading-font);margin:0 0 15px}
+.offering-card p{font:400 13px/1.78 var(--body-font);color:#625f59}
+.offering-link{font-size:12px;font-weight:750;color:#755637;border-bottom:1px solid #c6b093;padding-bottom:6px;margin-top:auto}
+.offering-link span{font-size:16px;margin-left:7px}
+.gift-inquiry-section{background:#f0e9e0;padding:95px 0}
+.inquiry-layout{display:grid;grid-template-columns:1fr 1fr;gap:7%;align-items:center}
+.inquiry-intro h2{font-size:clamp(40px,4.2vw,66px);margin:18px 0 27px}
+.inquiry-intro h2 em{font-style:italic;color:#a16e45}
+.inquiry-intro p{font-size:14px;line-height:1.8;color:#645d56;max-width:490px}
+.inquiry-notice{font-size:11px!important;color:#8f765d!important}
+.inquiry-form{padding:31px;border:1px solid #e6d8c5;background:#fffdf9;border-radius:19px;display:flex;flex-direction:column;gap:11px}
+.inquiry-form label{font-size:12px;font-weight:750;color:#5b4b3c}
+.inquiry-form input,.inquiry-form select,.inquiry-form textarea{width:100%;border:1px solid #dfd4c6;background:#fffcf8;border-radius:9px;padding:13px;font:400 13px var(--body-font);color:#213148;outline-color:#aa7a52}
+.inquiry-form textarea{resize:vertical;min-height:80px}
+.inquiry-form .btn{align-self:flex-start;margin-top:6px}
+#gift-form-status{font-size:11px;line-height:1.5;color:#80705d;margin:1px 0}
+@media(max-width:1100px){
+  .desktop-nav{gap:15px;font-size:12px}
+  .editorial-hero-copy{padding:70px 30px}
+  .editorial-hero-copy h1{font-size:clamp(51px,6vw,79px)}
+}
+@media(max-width:850px){
+  .editorial-hero{
+    height:calc(100svh - 76px);min-height:580px;max-height:820px;
+    display:block;isolation:isolate;background:#392820;
+  }
+  .editorial-hero-media{position:absolute;inset:0;width:100%;height:100%;min-height:0}
+  .editorial-hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .editorial-hero-media:after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,#1a110d08 0%,#1a110d1c 38%,#1a110d8a 78%,#1a110dc9 100%);
+  }
+  .editorial-hero-copy{
+    position:absolute;z-index:2;inset:0;background:none;
+    display:flex;align-items:flex-start;justify-content:flex-end;padding:32px 24px 42px;
+    color:#fff9f0;
+  }
+  .editorial-copy-inner{
+    border:1px solid #fff4df26;
+    border-radius:16px;
+    background:rgba(24,17,15,.49);
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px);
+    padding:21px;
+    width:100%;max-width:570px
+  }
+  .editorial-hero-copy h1{color:white;font-size:clamp(53px,8vw,80px)}
+  .editorial-hero-copy h1 em{color:#eac599}
+  .editorial-hero-copy .eyebrow{color:#f3dfc4}
+  .editorial-hero-copy p{color:#fff5e8;line-height:1.6}
+  .editorial-hero .btn-hot{background:#fff9ef;color:#172439}
+  .editorial-hero .btn-hero-secondary{border-color:#fbefe1;color:white}
+  .editorial-tiles,.gift-offerings{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .inquiry-layout{grid-template-columns:1fr;gap:28px}
+  .gift-inquiry-section{padding:65px 0}
+}
+@media(max-width:560px){
+  .desktop-nav{display:none}
+  .hero .hero-buttons{display:flex;flex-direction:row;gap:8px;flex-wrap:wrap;width:100%}
+  .hero .btn-hot,.hero .btn-hero-secondary{font-size:12px;padding:13px 13px;gap:11px;flex:1;white-space:nowrap}
+  .hero .btn-hero-secondary{
+    display:inline-flex;background:rgba(255,247,230,.12);border:1px solid #f2ddc5b8;
+    color:white;box-shadow:none;justify-content:center;
+  }
+  .hero .hero-text h1{font-size:clamp(53px,12vw,65px)}
+  .hero .hero-text p{font-size:13px;margin-bottom:12px}
+  .hero .hero-text-inner{padding:16px 14px 18px}
+  .site-crosslinks.wrap{padding-left:14px;padding-right:14px}
+  .crosslinks-grid,.cross-entry-wrap{grid-template-columns:1fr;gap:12px}
+  .crosslink-card,.cross-entry{min-height:182px;padding:23px}
+  .crosslink-card strong,.cross-entry strong{font-size:38px}
+  .editorial-hero{height:calc(100svh - 66px);min-height:590px;max-height:780px}
+  .editorial-hero-copy{padding:15px 12px 23px}
+  .editorial-copy-inner{padding:18px 16px}
+  .editorial-hero-copy h1{font-size:clamp(45px,11.8vw,62px);line-height:1.03;margin:15px 0 17px}
+  .editorial-hero-copy p{font-size:13px;line-height:1.6;margin-bottom:16px}
+  .editorial-hero .hero-buttons{gap:8px}
+  .editorial-hero .hero-buttons .btn{font-size:11px;padding:13px 12px;gap:8px;flex:1;white-space:normal}
+  .editorial-tiles,.gift-offerings{grid-template-columns:1fr}
+  .tile-visual{height:260px}
+  .tile-caption{padding:23px}
+  .gift-offerings{gap:12px}
+  .offering-card{min-height:210px;padding:23px}
+  .offering-index{margin-bottom:14px}
+  .gift-inquiry-section{padding:55px 0}
+  .inquiry-form{padding:20px}
+}
