@@ -970,3 +970,13 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
   .hero-local-link{font-size:11px;margin-top:10px;color:#e7c19b}
   .rosario-faq-list summary{font-size:13px}
 }
+
+
+/* Rosario delivery link in the main site's existing announcement strip. */
+.announcement .announce-local-link{
+  color:inherit;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  font-weight:800;
+}
+.announcement .announce-local-link:hover{opacity:.8}
