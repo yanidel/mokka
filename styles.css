@@ -1018,3 +1018,12 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
 @media(max-width:850px){
   .delivery-rate-grid .delivery-zone-card{min-height:0}
 }
+
+/* Display only commercially defined pack prices; avoid fabricated SKU pricing. */
+.product-known-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px;margin:10px 0 13px}
+.product-known-price strong{font:700 22px/1.1 var(--body-font);color:#1b2e45}
+.product-known-price span{font:500 11px/1.4 var(--body-font);color:#86735e}
+@media(max-width:560px){
+  .product-known-price strong{font-size:19px}
+  .product-known-price span{font-size:10px}
+}
