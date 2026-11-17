@@ -5,7 +5,7 @@ Tienda de alfajores y delicatessen: prototipo **HTML/CSS/JavaScript** independie
 ## Delicatessen: catálogo Merengo sin alfajores (17 noviembre 2026)
 
 - La landing `delicatessen.html` conserva su hero con Toblerone, pero ya **no** tiene las tarjetas genéricas de demostración. Ahora muestra **11 productos reales de Merengo**, con fotografías oficiales como referencias, presentación, descripción, etiquetas y precios online.
-- **Cuatro categorías funcionales:** Bocaditos (4), Bañados en chocolate (4), Confituras (2), Dulce de leche (1), además de buscador y enlaces a fichas individuales.
+- **Tres categorías funcionales:** Bocaditos (4), Bañados en chocolate (6, incluyendo garrapiñadas y bombones de fruta), Dulce de leche (1), además de buscador y enlaces a fichas individuales.
 - `delicatessen-data.js`: los 11 registros y URLs de fuentes; `delicatessen.js`: navegación por categorías y búsqueda; `delicatessen-producto.html` y `delicatessen-producto.js`: páginas individuales de la línea gourmet.
 - Los precios son los **publicados por Merengo**, no los precios comerciales aprobados de Mokka. Las fotos se enlazan desde el sitio de Merengo y requieren permiso de uso en producción. No hay stock ni checkout en esta maqueta.
 - [Ver precios, referencias y categorías para crear en Tiendanube](DELICATESSEN_MERENGO.md). La categoría oficial de Merengo *Pan dulces y budines* no presenta productos actuales publicados y por eso no se agregaron SKUs estacionales inventados.
