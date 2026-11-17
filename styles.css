@@ -1234,14 +1234,14 @@ body h1,
 body h2,
 body h3{
   font-family:"Lato",Arial,Helvetica,sans-serif;
-  font-weight:900;
+  font-weight:900 !important; /* overrides earlier font shorthands from the serif design */
   letter-spacing:-.04em;
 }
 body h1 em,
 body h2 em,
 body h3 em{
   font-family:"Lato",Arial,Helvetica,sans-serif;
-  font-weight:900;
+  font-weight:900 !important;
   font-style:italic;
   letter-spacing:-.035em;
 }
