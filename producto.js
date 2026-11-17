@@ -36,7 +36,7 @@
   status.className="detail-price-class detail-price-class--"+p.priceKind;
   elementText("#detail-price-warning",descriptions[p.priceKind]+(p.caution?" "+p.caution:""));
   const ref=$("#detail-source");
-  if(p.priceSource){ref.href=p.priceSource;ref.textContent="Fuente de referencia: "+p.priceSourceLabel+" ↗";}
+  if(p.priceSource){ref.href=p.priceSource;ref.textContent=p.priceKind==="defined"?"Comparar con la tienda oficial ↗":"Fuente de referencia: "+p.priceSourceLabel+" ↗";}
   else{ref.hidden=true}
   const image=$("#detail-image");
   image.src=db.brandPhotos[p.brand];
@@ -82,7 +82,7 @@
         ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","gbraid","wbraid","fbclid"].forEach(k=>{
           if(source.searchParams.has(k)&&!url.searchParams.has(k))url.searchParams.set(k,source.searchParams.get(k));
         });
-        const link=$("#detail-shop");link.hidden=false;link.href=url.href;
+        const link=$("#detail-shop");link.hidden=false;link.href=url.href;$("#detail-buy-unavailable").hidden=true;
         link.firstChild.textContent="Explorar en Tiendanube ";
         $("#detail-shop-status").textContent="Los precios mostrados son del prototipo. El valor de compra y stock definitivos serán los de Tiendanube.";
       }
