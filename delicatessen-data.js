@@ -7,8 +7,7 @@
 (function(){
   const categories=[
     {id:"bocaditos",name:"Bocaditos",description:"Conos de dulce de leche bañados en chocolate, también en versiones especiales."},
-    {id:"chocolates",name:"Bañados en chocolate",description:"Pequeñas especialidades para los amantes del chocolate."},
-    {id:"confituras",name:"Confituras",description:"Clásicos crocantes y golosinas frutales para regalar o compartir."},
+    {id:"chocolates",name:"Bañados en chocolate",description:"Chocolates, garrapiñadas y bombones de fruta para compartir."},
     {id:"dulces",name:"Dulce de leche",description:"El dulce de leche tradicional de Merengo para disfrutar en casa."}
   ];
   const products=[
@@ -143,8 +142,8 @@
   {
     "id": "garrapinada",
     "name": "Garrapiñada de maní",
-    "category": "confituras",
-    "categoryName": "Confituras",
+    "category": "chocolates",
+    "categoryName": "Bañados en chocolate",
     "pack": "Estuche x100 g",
     "price": 3500,
     "source": "https://alfajoresmerengo.com/productos/garrapinada-de-mani-x-100-grs/",
@@ -159,8 +158,8 @@
   {
     "id": "bombones-fruta",
     "name": "Bombones de fruta",
-    "category": "confituras",
-    "categoryName": "Confituras",
+    "category": "chocolates",
+    "categoryName": "Bañados en chocolate",
     "pack": "Estuche x100 g",
     "price": 6000,
     "source": "https://alfajoresmerengo.com/productos/bombones-de-fruta-x-100-grs/",
