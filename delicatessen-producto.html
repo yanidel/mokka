@@ -12,6 +12,7 @@
  <link rel="stylesheet" href="styles.css">
  <script src="pages.js" defer></script>
  <script src="delicatessen-data.js" defer></script>
+ <script src="zafarrancho-data.js" defer></script>
  <script src="delicatessen-producto.js" defer></script>
 </head>
 <body class="inner-page delicatessen-page deli-detail-page">
@@ -48,24 +49,25 @@
   <nav class="deli-detail-breadcrumb" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><a href="delicatessen.html">Delicatessen</a><span aria-hidden="true">/</span><span id="deli-detail-crumb">Producto</span></nav>
   <section id="deli-detail-not-found" class="deli-detail-not-found" hidden>
     <h1>Este producto no está en el catálogo.</h1>
-    <p>Volvé a Delicatessen para explorar los productos Merengo.</p>
+    <p>Volvé a Delicatessen para explorar los productos de Merengo y Zafarrancho.</p>
     <a class="btn btn-hot" href="delicatessen.html#catalogo-deli">Ver productos <span aria-hidden="true">↗</span></a>
   </section>
   <div id="deli-detail-content" hidden>
     <section class="deli-detail-columns">
       <div class="deli-detail-photo">
         <img id="deli-detail-image" alt="" width="700" height="700">
-        <span>Fotografía del fabricante. Uso de referencia para el prototipo.</span>
+        <div id="deli-detail-photo-placeholder" class="deli-detail-photo-placeholder" hidden><span id="deli-detail-emoji" aria-hidden="true">📦</span><p>Foto de producto pendiente. Podés verla en la ficha oficial del fabricante.</p></div>
+        <span id="deli-detail-photo-note">Fotografía del fabricante. Uso de referencia para el prototipo.</span>
       </div>
       <div class="deli-detail-description">
-        <div class="deli-detail-eyebrow">MERENGO · <span id="deli-detail-category"></span></div>
+        <div class="deli-detail-eyebrow"><span id="deli-detail-brand">MERENGO</span> · <span id="deli-detail-category"></span></div>
         <h1 id="deli-detail-name"></h1>
         <p id="deli-detail-pack" class="deli-detail-pack"></p>
         <p id="deli-detail-text"></p>
         <div id="deli-detail-tags" class="deli-product-tags"></div>
         <div class="deli-detail-pricing">
           <div class="deli-detail-price" id="deli-detail-price"></div>
-          <span>Precio minorista publicado por Merengo · referencia, no precio de Mokka</span>
+          <span id="deli-detail-pricing-note">Precio minorista del fabricante · referencia, no precio de Mokka</span>
           <a id="deli-detail-source" href="https://alfajoresmerengo.com/productos/" target="_blank" rel="noopener noreferrer">Ver producto y precio en Merengo ↗</a>
         </div>
         <div class="deli-detail-actions">
@@ -83,7 +85,7 @@
     </section>
     <section class="deli-related section">
       <div class="section-heading">
-        <div><span class="eyebrow mini">PARA SEGUIR DESCUBRIENDO</span><h2>Más de Merengo.</h2></div>
+        <div><span class="eyebrow mini">PARA SEGUIR DESCUBRIENDO</span><h2 id="deli-related-title">Más de Merengo.</h2></div>
         <a class="link-arrow" href="delicatessen.html#catalogo-deli">Ver catálogo ↗</a>
       </div>
       <div id="deli-related-grid" class="deli-product-grid"></div>
