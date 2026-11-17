@@ -1,78 +1,55 @@
-# Mokka — Rosario delivery pilot and WhatsApp ad measurement
+# Mokka — Rosario delivery pilot and ecommerce conversion tracking
 
-Updated: 2026-11-17.
+Updated 2026-11-17: all customer purchases will take place in **Tiendanube**. **WhatsApp is reserved exclusively for Regalos, cestas e instituciones**.
 
-## 1. Published Rosario courier pricing reference (not Uber)
+## 1. Rosario zone delivery guide
 
-Origin is Mokka's physical shop at Terminal de Ómnibus Mariano Moreno, Rosario.
+Origin: Mokka's shop in the Terminal de Rosario (local open 24 hours; express order cutoff announced as 21:00).
 
-Public price reference: **Punto a Punto**, https://www.empreya.com.ar/puntoapunto/index.php
-- Up to **5 km: ARS $4,000**
-- Beyond 5 km: **ARS $800 per additional km**
-- The provider's website also notes a service operating window and courier availability restrictions.
-- No commercial agreement with Mokka has been entered into by this change. Fares may change and extra fees or restrictions may apply.
+Reference tariff published by Punto a Punto: https://www.empreya.com.ar/puntoapunto/index.php
 
-**Three website illustration zones (measured by road distance, not radius):**
-
-| Band | Distance | Indicative amount |
+| Reference zone | Road distance | Indicative tariff |
 | --- | --- | --- |
-| 1, short trip | Up to 5 km | $4,000 |
-| 2, medium | >5 to 10 km | >$4,000 to $8,000 |
-| 3, extended | >10 to 15 km | >$8,000 to $12,000 |
+| Nearby | up to 5 km | ARS $4,000 |
+| Intermediate | over 5 to 10 km | ARS $4,000–$8,000 |
+| Extended | over 10 to 15 km | ARS $8,000–$12,000 |
 
-A distance exactly at 5, 10 or 15 km will use the tariff formula. No claim is made that Uber Envíos, which quotes fares dynamically, will charge these amounts. Mokka must confirm a **specific price, availability, and ETA** before accepting the order. Outside 15 km: consult. Do not advertise '60 minutes guaranteed' or free delivery.
+Reference assumes first 5 km at $4,000 and additional km at $800; exact charges can differ with provider, schedule, availability and distance. **These are not Uber Envíos prices or confirmed Mokka delivery charges.** No courier service agreement or actual shipping booking is established by this code change. The three zone cards now link to the alfajor catalog, not WhatsApp.
 
-Other benchmarks worth evaluating:
-- [Rayo Cadetería](https://www.rayocadeteriarosario.com.ar/): on-page distance calculator.
-- [Motomensajería Rosario](https://motomensajeria.net.ar/rosario): lists an on-demand individual delivery minimum of $10,000, and a separate minimum for batched ecommerce jobs. Verify actual applicability.
+**Before selling:** add a shipping method to **Mokka's Tiendanube** limited to eligible Rosario addresses/postcodes and delivery hours, and show actual shipping prices at checkout. Keep the cutoff of **21:00** consistent with the promised delivery capacity; orders placed later must not be promised same-day service. Offer pickup at the Terminal as a separate Tiendanube option if operationally available.
 
-The three delivery cards on `rosario.html` link to WhatsApp with a different pre-filled zone inquiry. **No prepaid shipping charge is implemented** in this static prototype.
+## 2. Tiendanube storefront routing
 
-## 2. WhatsApp lead measurement is instrumented, not yet transmitting to GA4
+`shop-links.js` has one configuration line:
 
-`tracking.js` is loaded by `index.html`, `delicatessen.html`, `regalos.html`, and `rosario.html`.
-
-Every click on a link to `wa.me`, `www.wa.me`, or `api.whatsapp.com` creates a synchronous browser `dataLayer` event:
-
-```javascript
-{
-  event: "mokka_whatsapp_click",
-  button_location: "shipping_zone", // e.g. floating_button, rosario_hero, rosario_cta
-  page_section: "rosario",           // or alfajores_y_dulces/delicatessen/regalos
-  delivery_zone: "5_10km"            // or hasta_5km/10_15km/not_selected
-}
+```js
+const MOKKA_TIENDANUBE_CATALOG_URL = "";
 ```
 
-When a **direct** Google tag `gtag` is present **without** a GTM container, the script instead also sends `gtag("event","whatsapp_click",parameters)`. With Google Tag Manager present, the Custom Event `mokka_whatsapp_click` can trigger a **single** GA4 event tag called `whatsapp_click`. Do not configure both simultaneously or events may be duplicated.
+Set this to the **actual Mokka** store/catalog URL once available. Do **not** reuse another business's Tiendanube link.
 
-No Mokka-owned measurement ID (a `G-...` ID) or GTM container ID (`GTM-...`) is presently configured in this repository. **Hence events are NOT yet visible in GA4 or Google Ads.** Do not reuse GA4/GTM identifiers belonging to Hekyän or any other business.
+The homepage and the Rosario landing have buttons with `data-shop-link="alfajores"`. When the Tiendanube URL is configured, `shop-links.js` sends those links to the store, carrying `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `gclid`, `gbraid`, `wbraid`, and `fbclid` when present. With an empty URL, users see only the prototype's research catalog. **This is not a live checkout.** The static `index.html` demo has no real inventory, prices or payment capability.
 
-### To activate with GTM + GA4
+Netlify's `_redirects` maps `/rosario` to `rosario.html`. Check the deployed route before buying traffic.
 
-1. Create/locate a **Mokka** GA4 property and a Mokka GTM web container. Install the GTM container snippet on all four pages.
-2. In GTM, configure the Google tag to send page views to Mokka's GA4 property.
-3. Add **Custom Event trigger** named `mokka_whatsapp_click`.
-4. Create a GA4 Event tag `whatsapp_click` that uses this trigger. Map the three data-layer variables as event parameters: `button_location`, `page_section`, and `delivery_zone`.
-5. Preview the GTM container with Tag Assistant; load `/rosario?utm_source=google&utm_medium=cpc&utm_campaign=rosario_express`; click the floating WhatsApp button and each zone button separately. Confirm **one** `whatsapp_click` event per click, carrying the correct `delivery_zone` and page.
-6. Publish GTM. Check **GA4 Realtime / DebugView**. In GA4 Admin, mark `whatsapp_click` as a key event; connect Mokka's Google Ads account and import this event as a lead conversion.
-7. Initially treat WhatsApp clicks as **leads, not sales**. Set it to secondary/observation unless the ads are intentionally optimizing for enquiries, because a click does not prove a message was sent or an order was placed.
+## 3. Measure purchase conversions — not WhatsApp leads
 
-For Meta ads, use UTM parameters and a Meta Pixel / Conversions API setup associated **with Mokka**, not an unrelated brand.
+For Mokka ecommerce campaigns, the main performance event should be a **completed Tiendanube purchase**, with value and currency ARS, not a click to the product catalog.
 
-### Example campaign destination URLs
+1. Install **Mokka's** GA4 integration on its Tiendanube store. Ensure it sends `purchase` with `transaction_id`, `value`, `currency=ARS` and purchased products, and that one order is counted once.
+2. Connect **Mokka's** Google Ads account to GA4, and import the ecommerce `purchase` key event or use the platform's supported Ads conversion setup without duplicate counting.
+3. Connect the ad landing (`kaz.netlify.app/rosario`, or its eventual custom domain) to the Mokka store with consistent attribution. `shop-links.js` preserves campaign parameters when navigating across domains, but **cross-domain attribution also requires proper GA4 configuration and testing**.
+4. Verify a test purchase end-to-end in GA4 DebugView / Realtime and Google Ads before optimizing for orders. Do not count catalog visits or WhatsApp opens as completed purchases.
+5. Use the UTM-tagged campaign destination, for example: `https://kaz.netlify.app/rosario?utm_source=google&utm_medium=cpc&utm_campaign=rosario_express`. Instagram equivalents can use `utm_source=instagram&utm_medium=paid_social`.
 
-- Google Ads: `https://kaz.netlify.app/rosario?utm_source=google&utm_medium=cpc&utm_campaign=rosario_express`
-- Instagram: `https://kaz.netlify.app/rosario?utm_source=instagram&utm_medium=paid_social&utm_campaign=rosario_express`
+No Mokka-owned GA4 measurement ID, Google Ads conversion ID, or Tiendanube storefront URL is in the repository at this time. Hence conversion reporting has **not** been activated. No ads or external accounts were modified.
 
-Netlify's `_redirects` file maps `/rosario` to `rosario.html`. Confirm the actual deployed URL before paying for traffic.
+## 4. WhatsApp only for Regalos
 
-### What the script does **not** claim
+The circular floating WhatsApp button is present **only on `regalos.html`**.
 
-- Does not prove WhatsApp opened successfully or a message was sent.
-- Does not read or transmit destination addresses, phone numbers, or prefilled WhatsApp messages as analytics parameters.
-- Does not create a GTM container, GA4 property, Ads conversion action, or live tracking without the respective account IDs and GTM publication.
-- Does not dispatch delivery requests or integrate Uber API.
+`tracking.js` is now loaded only on `regalos.html`. When its button is clicked, a local browser `dataLayer` event named `mokka_whatsapp_click` is emitted with placement and page labels, or `whatsapp_click` via direct `gtag` if configured. This is **an enquiry lead, not a purchase**, and isn't currently sent to a Mokka analytics account because no GA4/GTM ID is connected.
 
-## 3. Daily pilot measurement
+## 5. Pilot operations
 
-Collect: date, origin of lead (Google/Instagram/organic), selected delivery zone, courier used, actual quote in ARS, charged customer shipping in ARS, actual delivery cost, delivered yes/no, order subtotal, failed/no-stock quotes. After 20–30 shipments, adjust site zone price guide using real medians and identify the point at which a dedicated courier agreement saves money.
+For 20–30 orders, record actual courier cost, customer shipping charge, order subtotal, ship date/time, attempted vs completed delivery, origin channel and area, delivery duration, and failed shipment causes. Use these **actual** costs to update the illustrative three-zone delivery guide.
