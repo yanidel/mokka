@@ -544,3 +544,44 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
   .hero .btn-hot{font-size:13px;padding:14px 19px}
   .hero .text-link{display:none}
 }
+
+
+/* Readable translucent hero panel: mobile only, preserving the alfajor photo. */
+.hero-text-inner{width:100%}
+@media(max-width:850px){
+  .hero-text-inner{
+    width:100%;
+    max-width:540px;
+    background:rgba(24,17,15,.43);
+    -webkit-backdrop-filter:blur(3px);
+    backdrop-filter:blur(3px);
+    border:1px solid rgba(255,244,222,.13);
+    border-radius:18px;
+    padding:22px 23px 24px;
+    box-shadow:0 10px 34px rgba(18,11,8,.15);
+  }
+  /* The panel provides contrast, so the photograph needs less overall darkening. */
+  .hero-image::after{
+    background:linear-gradient(180deg,
+      rgba(24,17,15,.01) 0%,
+      rgba(24,17,15,.02) 38%,
+      rgba(24,17,15,.13) 66%,
+      rgba(24,17,15,.44) 100%);
+  }
+}
+@media(max-width:560px){
+  .hero-text{
+    padding:25px 12px max(20px,env(safe-area-inset-bottom));
+  }
+  .hero-text-inner{
+    max-width:none;
+    border-radius:16px;
+    padding:17px 15px 19px;
+    background:rgba(24,17,15,.48);
+  }
+  .hero-text h1{
+    font-size:clamp(43px,10.3vw,60px);
+    max-width:100%;
+  }
+  .hero-text p{max-width:100%}
+}
