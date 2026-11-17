@@ -2,21 +2,34 @@
 
 Updated 2026-11-17: all customer purchases will take place in **Tiendanube**. **WhatsApp is reserved exclusively for Regalos, cestas e instituciones**.
 
-## 1. Rosario zone delivery guide
+## 1. Rosario express shipping rates (Mokka customer policy)
 
-Origin: Mokka's shop in the Terminal de Rosario (local open 24 hours; express order cutoff announced as 21:00).
+Origin: Mokka's shop at Terminal de Rosario (open 24 hours). Same-day express order cutoff **21:00**, conditional on courier availability.
 
-Reference tariff published by Punto a Punto: https://www.empreya.com.ar/puntoapunto/index.php
-
-| Reference zone | Road distance | Indicative tariff |
+| Fulfilment option | Eligible order value | Customer delivery charge |
 | --- | --- | --- |
-| Nearby | up to 5 km | ARS $4,000 |
-| Intermediate | over 5 to 10 km | ARS $4,000–$8,000 |
-| Extended | over 10 to 15 km | ARS $8,000–$12,000 |
+| Express within Mokka's enabled Rosario coverage | Below ARS $100,000 | **ARS $5,000** |
+| Express within Mokka's enabled Rosario coverage | **ARS $100,000 or more** | **FREE** |
+| Pickup at the Terminal | Any amount | **FREE** |
 
-Reference assumes first 5 km at $4,000 and additional km at $800; exact charges can differ with provider, schedule, availability and distance. **These are not Uber Envíos prices or confirmed Mokka delivery charges.** No courier service agreement or actual shipping booking is established by this code change. The three zone cards now link to the alfajor catalog, not WhatsApp.
+This is a **Mokka price policy**, not a quote or contract from Uber or any other courier. Mokka bears actual courier costs above customer charges. Validate actual margin and allowable geographic coverage before offering in the live Tiendanube checkout. Do **not** promise same-day delivery outside the operating cutoff, or where courier supply is unavailable.
 
-**Before selling:** add a shipping method to **Mokka's Tiendanube** limited to eligible Rosario addresses/postcodes and delivery hours, and show actual shipping prices at checkout. Keep the cutoff of **21:00** consistent with the promised delivery capacity; orders placed later must not be promised same-day service. Offer pickup at the Terminal as a separate Tiendanube option if operationally available.
+The three site cards display these prices, replacing distance-tiered $4,000–$12,000 third-party estimates. Those old estimates should not be shown as customer shipping prices.
+
+### Configure in Mokka's Tiendanube checkout
+
+Tiendanube supports custom delivery with a fixed amount, free shipping options, restrictions by region/distance and **range of cart value**:
+https://ayuda.tiendanube.com/es_AR/envios-personalizados/como-ofrecer-otros-envios-o-entregas-personalizadas
+https://ayuda.tiendanube.com/es_AR/envio-gratis/como-crear-un-envio-o-entrega-personalizada-gratis
+
+Set up:
+1. "Entrega express Rosario" with cost **ARS $5,000**, only for eligible Rosario local addresses and orders **below $100,000**.
+2. "Entrega express Rosario GRATIS desde $100.000" with zero cost, same eligible Rosario coverage and order **$100,000 or more**.
+3. "Retiro en Terminal de Rosario" at zero cost (with location/instructions), only if fulfilment operations are ready.
+4. Express order cutoff **21:00**, with fulfilment capacity and availability gating. If checkout can't enforce cutoff natively, use a verified scheduling solution before promising same-day service.
+5. Test at exactly $99,999 and $100,000, multiple Rosario and out-of-area postcodes, pickup and after-cutoff checkout. Ensure only the correct delivery method is shown.
+
+These operations are **documented**, not yet applied to a Tiendanube account. The prototype does not take actual payments.
 
 ## 2. Tiendanube storefront routing
 
