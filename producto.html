@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#fbfaf7">
+ <meta name="description" content="Explorá los alfajores de Mokka: fotos, variedades, precios orientativos, presentaciones y entrega en Rosario.">
+ <title>Detalle del alfajor | Mokka</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css">
+ <script src="catalog-data.js" defer></script>
+ <script src="shop-links.js" defer></script>
+ <script src="pages.js" defer></script>
+ <script src="producto.js" defer></script>
+</head>
+<body class="inner-page product-detail-page">
+<div class="announcement"><a class="announce-local-link" href="rosario.html">ROSARIO: ENTREGA EXPRESS <span aria-hidden="true">↗</span></a> <span class="star">✦</span> SABORES PARA DESCUBRIR</div>
+<header class="site-header" id="inicio">
+  <div class="nav-shell wrap">
+    <a class="brand" href="index.html" aria-label="Mokka, volver a Alfajores y dulces"><img src="assets/mokka-logo-premium.svg" alt="Mokka" width="184" height="94"></a>
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="index.html" class="active" aria-current="page">Alfajores y dulces</a>
+      <a href="delicatessen.html">Delicatessen</a>
+      <a href="regalos.html">Regalos, cestas e instituciones</a>
+      <a href="index.html#descubri">Tu alfajor ideal</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="icon-btn" href="index.html#alfajores" aria-label="Explorar el catálogo de alfajores" title="Ver alfajores">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.6" cy="10.6" r="6.8"/><path d="m16 16 5 5"/></svg>
+      </a>
+      <button id="menu-toggle" class="icon-btn menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav" type="button">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden>
+    <a href="index.html">Alfajores y dulces</a>
+    <a href="delicatessen.html" aria-current="page">Delicatessen</a>
+    <a href="regalos.html">Regalos, cestas e instituciones</a>
+    <a href="index.html#descubri">Tu alfajor ideal</a>
+  
+    <a href="rosario.html">Entrega express Rosario</a>
+  </nav>
+</header>
+
+<main class="mokka-product-detail" id="producto">
+ <div class="wrap">
+   <nav class="detail-breadcrumb" aria-label="Ruta de navegación">
+     <a href="index.html">Inicio</a><span aria-hidden="true">/</span>
+     <a href="index.html#alfajores">Alfajores y dulces</a><span aria-hidden="true">/</span>
+     <span id="detail-breadcrumb-name">Detalle</span>
+   </nav>
+   <div id="detail-not-found" class="detail-not-found" hidden>
+     <h1>No encontramos ese alfajor.</h1>
+     <p>Podés volver al catálogo para descubrir todas nuestras variedades.</p>
+     <a class="btn btn-hot" href="index.html#alfajores">Ver alfajores <span aria-hidden="true">↗</span></a>
+   </div>
+   <div id="detail-content" hidden>
+     <section class="detail-grid">
+       <div class="detail-media">
+         <div class="detail-image-frame"><img id="detail-image" alt="" width="750" height="750"><span class="detail-image-note">Imagen de referencia de la marca. Puede no representar esta variedad.</span></div>
+       </div>
+       <div class="detail-info">
+         <div class="detail-eyebrow" id="detail-origin"></div>
+         <h1 id="detail-title"></h1>
+         <p id="detail-summary" class="detail-summary"></p>
+         <div class="detail-price-block">
+           <span class="detail-price" id="detail-price"></span>
+           <span id="detail-pack" class="detail-pack"></span>
+           <span class="detail-price-class" id="detail-price-class"></span>
+           <a class="detail-source" id="detail-source" href="#" target="_blank" rel="noopener noreferrer">Ver la referencia del precio ↗</a>
+           <p id="detail-price-warning" class="detail-price-warning"></p>
+         </div>
+         <div id="detail-traits" class="detail-traits"></div>
+         <div class="detail-quantity-row">
+           <span class="detail-field-label">Cantidad de cajas / estuches</span>
+           <div class="detail-counter" role="group" aria-label="Cantidad">
+             <button type="button" id="detail-minus" aria-label="Restar una unidad">−</button>
+             <input type="number" id="detail-quantity" min="1" max="99" value="1" inputmode="numeric" aria-label="Cantidad de paquetes">
+             <button type="button" id="detail-plus" aria-label="Sumar una unidad">+</button>
+           </div>
+         </div>
+         <div class="detail-total-row"><span>Total de referencia</span><strong id="detail-total"></strong></div>
+         <div class="detail-actions">
+           <a id="detail-shop" class="btn btn-hot" href="#" hidden>Ver producto en Tiendanube <span aria-hidden="true">↗</span></a>
+           <button id="detail-save" type="button" class="btn btn-hero-secondary">♡ Guardar entre favoritos</button>
+         </div>
+         <p id="detail-shop-status" class="detail-legal">Esta es una ficha de prueba: no hay stock confirmado ni checkout. Los precios son informativos.</p>
+         <p id="detail-feedback" class="detail-feedback" role="status" aria-live="polite"></p>
+       </div>
+     </section>
+     <section class="detail-services" aria-label="Opciones de entrega">
+       <div><strong>🛵 Express en Rosario</strong><span>$5.000 · Gratis desde $100.000, sujeto a zona y disponibilidad.</span></div>
+       <div><strong>🕘 Pedidos hasta las 21 h</strong><span>Horario previsto para entrega express.</span></div>
+       <div><strong>📍 Retiro en Terminal</strong><span>Sin costo de envío, una vez habilitado en Tiendanube.</span></div>
+     </section>
+     <section class="detail-related section">
+       <div class="section-heading"><div><span class="eyebrow mini">PARA SEGUIR DESCUBRIENDO</span><h2>También puede gustarte.</h2></div><a class="link-arrow" href="index.html#alfajores">Ver todos ↗</a></div>
+       <div id="detail-related" class="detail-related-grid"></div>
+     </section>
+   </div>
+ </div>
+</main>
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about"><div class="footer-logo">Mokka<span class="footer-smile"></span></div><p>Una selección de dulces, descubrimientos y pequeños placeres para compartir.</p></div>
+    <div><h3>Descubrí</h3><a href="index.html">Alfajores y dulces</a><a href="delicatessen.html">Delicatessen</a><a href="index.html#descubri">Tu alfajor ideal</a></div>
+    <div><h3>Para compartir</h3><a href="regalos.html">Regalos</a><a href="regalos.html#cestas">Cestas</a><a href="regalos.html#instituciones">Instituciones</a><a href="rosario.html">Entrega express Rosario</a></div>
+    <div class="footer-news"><h3>Un proyecto en construcción</h3><p>Esta es una demostración de Mokka. Las propuestas y los productos definitivos se incorporarán cuando esté confirmado el catálogo.</p></div>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 Mokka · Sitio de prueba</span><span>Argentina · Hecho para compartir</span></div>
+</footer>
+
+</body>
+</html>
