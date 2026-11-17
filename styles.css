@@ -1122,3 +1122,6 @@ h2 em,h1 em,.gift-text h2 em,.quiz-top h2 em{font-family:var(--heading-font);fon
  .detail-related-copy strong{font-size:19px}
  .detail-related{padding-top:45px}
 }
+
+/* Disabled only in preview: real Tiendanube buttons come from its native product form. */
+.product-detail-page .detail-actions button:disabled{opacity:.56;cursor:not-allowed;box-shadow:none;filter:grayscale(.15)}
