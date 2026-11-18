@@ -1,18 +1,6 @@
 "use strict";
 // Interaction for Mokka's informational pages. No data is transmitted.
-const menuButton=document.getElementById("menu-toggle");
-const mobileNav=document.getElementById("mobile-nav");
-function setMenu(open){
-  if(!menuButton||!mobileNav)return;
-  mobileNav.hidden=!open;
-  menuButton.setAttribute("aria-expanded",String(open));
-  menuButton.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú");
-}
-if(menuButton&&mobileNav){
-  menuButton.addEventListener("click",()=>setMenu(mobileNav.hidden));
-  mobileNav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
-  document.addEventListener("keydown",e=>{if(e.key==="Escape")setMenu(false)});
-}
+// Primary menus are managed in shared navigation.js.
 const inquiryForm=document.getElementById("gift-inquiry-form");
 if(inquiryForm){
   const type=document.getElementById("gift-type");
