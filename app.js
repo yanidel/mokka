@@ -8,6 +8,14 @@ const $$=s=>Array.from(document.querySelectorAll(s));
 const prefs={textura:new Set(),relleno:new Set(),cobertura:new Set()};
 let brandFilter="";
 let searchFilter="";
+const requestedBrand=new URLSearchParams(window.location.search).get("marca");
+if(requestedBrand&&products.some(p=>p.brand===requestedBrand))brandFilter=requestedBrand;
+function syncBrandURL(){
+  const url=new URL(window.location.href);
+  if(brandFilter)url.searchParams.set("marca",brandFilter);
+  else url.searchParams.delete("marca");
+  window.history.replaceState(null,"",url.pathname+url.search+url.hash);
+}
 let saved=[];
 try{const cache=JSON.parse(localStorage.getItem("mokkaResearchSelectionV1")||"[]");if(Array.isArray(cache))saved=cache.filter(id=>products.some(p=>p.id===id));}catch(e){saved=[];}
 let toastTimer;
@@ -54,17 +62,17 @@ function renderProducts(){
 }
 function scrollCatalog(){document.getElementById("alfajores").scrollIntoView({behavior:"smooth",block:"start"});}
 function resetFilters(){
-  brandFilter="";searchFilter="";Object.values(prefs).forEach(s=>s.clear());
+  brandFilter="";syncBrandURL();searchFilter="";Object.values(prefs).forEach(s=>s.clear());
   $$(".preference").forEach(btn=>btn.setAttribute("aria-pressed","false"));
   $("#site-search").value="";renderProducts();
 }
-$$(".brand-card").forEach(btn=>btn.addEventListener("click",()=>{brandFilter=brandFilter===btn.dataset.brand?"":btn.dataset.brand;renderProducts();scrollCatalog();}));
+$$(".brand-card").forEach(btn=>btn.addEventListener("click",()=>{brandFilter=brandFilter===btn.dataset.brand?"":btn.dataset.brand;syncBrandURL();renderProducts();scrollCatalog();}));
 $$(".preference").forEach(btn=>btn.addEventListener("click",()=>{
  const group=btn.dataset.group,val=btn.dataset.preference,set=prefs[group];if(!set)return;
  if(set.has(val))set.delete(val);else set.add(val);
  btn.setAttribute("aria-pressed",String(set.has(val)));
 }));
-$("#see-matches").addEventListener("click",()=>{brandFilter="";renderProducts();scrollCatalog();if(!Object.values(prefs).some(s=>s.size))notify("Elegí una opción o explorá todas las variedades.");});
+$("#see-matches").addEventListener("click",()=>{brandFilter="";syncBrandURL();renderProducts();scrollCatalog();if(!Object.values(prefs).some(s=>s.size))notify("Elegí una opción o explorá todas las variedades.");});
 $("#clear-preferences").addEventListener("click",()=>{Object.values(prefs).forEach(s=>s.clear());$$(".preference").forEach(b=>b.setAttribute("aria-pressed","false"));renderProducts();});
 $("#reset-filters").addEventListener("click",resetFilters);
 $("#all-brands").addEventListener("click",resetFilters);
