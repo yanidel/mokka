@@ -1453,3 +1453,253 @@ body h3 em{
  .deli-merch-info .deli-product-price{font-size:21px}
  .deli-detail-photo-placeholder>span{font-size:76px}
 }
+
+
+
+/* MOKKA NAVIGATION v2: three browsable categories + one deliberate discovery CTA.
+ * Shared desktop and mobile menus use native links and JS only for submenus. */
+.mokka-primary-nav{
+  display:flex;
+  align-items:center;
+  gap:clamp(13px,1.85vw,27px);
+  font-family:var(--body-font,"Manrope",Arial,sans-serif);
+  font-size:13px;
+  font-weight:700;
+}
+.mokka-primary-nav .nav-group{
+  display:flex;
+  align-items:center;
+  position:relative;
+  gap:0;
+  height:48px;
+  white-space:nowrap;
+}
+.mokka-primary-nav .nav-main-link{
+  position:relative;
+  padding:12px 2px 12px 4px;
+  font-size:13px;
+  font-weight:750;
+  color:#26354a;
+  text-decoration:none;
+  transition:color .16s;
+}
+.mokka-primary-nav .nav-group.is-current .nav-main-link,
+.mokka-primary-nav .nav-group.is-open .nav-main-link,
+.mokka-primary-nav .nav-main-link:hover{
+  color:#976a40;
+}
+.mokka-primary-nav .nav-main-link::after,
+.mokka-primary-nav .nav-dropdown a::after,
+.mokka-primary-nav .nav-discovery::after{
+  display:none!important;
+}
+.mokka-primary-nav .nav-group.is-current .nav-main-link::before{
+  content:"";
+  position:absolute;
+  bottom:2px;
+  left:4px;
+  width:6px;
+  height:6px;
+  background:#b78757;
+  border-radius:50%;
+}
+.mokka-primary-nav .nav-chevron{
+  display:grid;
+  place-items:center;
+  width:27px;
+  height:36px;
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:7px;
+  color:#947c65;
+  transition:color .16s,background .16s;
+}
+.mokka-primary-nav .nav-chevron:hover,
+.mokka-primary-nav .nav-chevron:focus-visible{
+  background:#f5eee6;
+  color:#78502e;
+}
+.mokka-primary-nav .nav-chevron svg,
+.mokka-mobile-nav .mobile-nav-chevron svg{
+  display:block;
+  width:15px;
+  height:15px;
+  transition:transform .17s ease;
+}
+.mokka-primary-nav .nav-group.is-open .nav-chevron svg,
+.mokka-mobile-nav .mobile-nav-group.is-open .mobile-nav-chevron svg{
+  transform:rotate(180deg);
+}
+.mokka-primary-nav .nav-dropdown{
+  position:absolute;
+  top:100%;
+  left:-12px;
+  z-index:90;
+  min-width:248px;
+  padding:14px 9px 10px;
+  background:#fffdf9;
+  border:1px solid #ebe0d1;
+  border-radius:15px;
+  box-shadow:0 18px 45px rgba(25,27,37,.14);
+  white-space:normal;
+}
+.mokka-primary-nav .nav-dropdown-kicker{
+  display:block;
+  padding:5px 11px 10px;
+  color:#a27952;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.11em;
+}
+.mokka-primary-nav .nav-dropdown a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:10px 11px;
+  border-radius:8px;
+  color:#26374f;
+  font-size:12px;
+  line-height:1.35;
+  font-weight:650;
+  text-decoration:none;
+  transition:background .15s,color .15s;
+}
+.mokka-primary-nav .nav-dropdown a:hover,
+.mokka-primary-nav .nav-dropdown a:focus-visible{
+  color:#80542c;
+  background:#f5eee5;
+}
+.mokka-primary-nav .nav-dropdown a span{
+  color:#b79a7b;
+  font-size:14px;
+}
+.mokka-primary-nav .nav-discovery{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:42px;
+  padding:11px 17px;
+  background:#21344d;
+  border:1px solid #21344d;
+  border-radius:40px;
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  white-space:nowrap;
+  box-shadow:none;
+  transition:background .16s,transform .16s;
+}
+.mokka-primary-nav .nav-discovery:hover,
+.mokka-primary-nav .nav-discovery:focus-visible{
+  color:#fff;
+  background:#344f6d;
+  transform:translateY(-1px);
+}
+.mokka-primary-nav .nav-discovery span{
+  font-size:16px;
+  font-weight:500;
+}
+.mokka-primary-nav :is(a,button):focus-visible,
+.mokka-mobile-nav :is(a,button):focus-visible{
+  outline:2px solid #bc8c60;
+  outline-offset:3px;
+}
+
+/* Mobile: compact, full-width anchored menu with only one expanded category. */
+.site-header{isolation:isolate}
+.mokka-mobile-nav{
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  z-index:100;
+  max-height:calc(100dvh - 85px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  padding:11px 18px 24px;
+  border-top:1px solid #eee4d9;
+  border-bottom:1px solid #e4d7c8;
+  background:#fffdf9;
+  box-shadow:0 20px 35px rgba(20,32,50,.14);
+  font-family:var(--body-font,"Manrope",Arial,sans-serif);
+}
+.mokka-mobile-nav .mobile-nav-group{border-bottom:1px solid #eee5da}
+.mokka-mobile-nav .mobile-nav-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  min-height:56px;
+}
+.mokka-mobile-nav a.mobile-nav-main{
+  flex:1;
+  display:block;
+  padding:16px 9px;
+  color:#24344a;
+  font-size:15px;
+  font-weight:750;
+}
+.mokka-mobile-nav .mobile-nav-group.is-current a.mobile-nav-main{
+  color:#93633c;
+}
+.mokka-mobile-nav .mobile-nav-chevron{
+  display:grid;
+  place-items:center;
+  flex:0 0 47px;
+  height:44px;
+  background:#f8f1e9;
+  border:1px solid #ecdfd0;
+  border-radius:10px;
+  color:#795f44;
+}
+.mokka-mobile-nav .mobile-nav-dropdown{
+  padding:1px 10px 14px 20px;
+}
+.mokka-mobile-nav .mobile-nav-dropdown a{
+  display:block;
+  padding:11px 8px;
+  color:#605c56;
+  font-size:13px;
+  font-weight:600;
+  line-height:1.3;
+}
+.mokka-mobile-nav .mobile-nav-dropdown a:hover{
+  color:#805733;
+}
+.mokka-mobile-nav .mobile-nav-discovery{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:16px 17px;
+  margin:21px 0 4px;
+  border-radius:12px;
+  background:#21344d;
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+}
+.mokka-mobile-nav .mobile-nav-discovery:hover{color:#fff;background:#334d69}
+.mokka-mobile-nav .mobile-nav-rosario{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:17px 10px 6px;
+  font-size:12px;
+  font-weight:700;
+  color:#967047;
+}
+@media(max-width:850px){
+  .mokka-primary-nav{display:none}
+  .mokka-mobile-nav{max-height:calc(100dvh - 77px)}
+}
+@media(max-width:560px){
+  .mokka-mobile-nav{padding:10px 14px 19px;max-height:calc(100dvh - 67px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .mokka-primary-nav *,
+  .mokka-mobile-nav *{transition:none!important}
+}
