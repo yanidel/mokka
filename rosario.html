@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Lato:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="pages.js" defer></script>
+  <script src="navigation.js" defer></script>
   <script src="shop-links.js" defer></script>
 </head>
 <body class="inner-page rosario-page">
@@ -19,12 +20,44 @@
 <header class="site-header" id="inicio">
   <div class="nav-shell wrap">
     <a class="brand" href="index.html" aria-label="Mokka, volver a Alfajores y dulces"><img src="assets/mokka-logo-premium.svg" alt="Mokka" width="184" height="94"></a>
-    <nav class="desktop-nav" aria-label="Navegación principal">
-      <a href="index.html">Alfajores y dulces</a>
-      <a href="delicatessen.html">Delicatessen</a>
-      <a href="regalos.html">Regalos, cestas e instituciones</a>
-      <a href="rosario.html" aria-current="page">Rosario express</a>
-    </nav>
+    <nav class="desktop-nav mokka-primary-nav" aria-label="Navegación principal">
+    <div class="nav-group" data-nav-group>
+      <a class="nav-main-link" href="index.html">Alfajores</a>
+      <button class="nav-chevron" type="button" aria-label="Explorar Alfajores" aria-controls="nav-dropdown-alfajores" aria-expanded="false"><svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3.5 6 4.5 4 4.5-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-dropdown" id="nav-dropdown-alfajores" hidden>
+        <span class="nav-dropdown-kicker">ALFAJORES Y DULCES</span>
+        <a href="index.html#marcas">Todas las marcas<span aria-hidden="true">↗</span></a>
+        <a href="index.html#alfajores">Ver todos los alfajores<span aria-hidden="true">↗</span></a>
+        <a href="index.html?marca=Merengo#alfajores">Merengo<span aria-hidden="true">↗</span></a>
+        <a href="index.html?marca=Zafarrancho#alfajores">Zafarrancho<span aria-hidden="true">↗</span></a>
+        <a href="index.html?marca=Saboreé#alfajores">Saboreé<span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="nav-group" data-nav-group>
+      <a class="nav-main-link" href="delicatessen.html">Delicatessen</a>
+      <button class="nav-chevron" type="button" aria-label="Explorar Delicatessen" aria-controls="nav-dropdown-delicatessen" aria-expanded="false"><svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3.5 6 4.5 4 4.5-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-dropdown" id="nav-dropdown-delicatessen" hidden>
+        <span class="nav-dropdown-kicker">SABORES Y ESPECIALIDADES</span>
+        <a href="delicatessen.html#catalogo-deli">Todos los productos<span aria-hidden="true">↗</span></a>
+        <a href="delicatessen.html?categoria=bocaditos#catalogo-deli">Bocaditos<span aria-hidden="true">↗</span></a>
+        <a href="delicatessen.html?categoria=chocolates#catalogo-deli">Bañados en chocolate<span aria-hidden="true">↗</span></a>
+        <a href="delicatessen.html?categoria=dulces#catalogo-deli">Dulce de leche<span aria-hidden="true">↗</span></a>
+        <a href="delicatessen.html#zafarrancho">Modo Zafarrancho<span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="nav-group" data-nav-group>
+      <a class="nav-main-link" href="regalos.html">Regalos</a>
+      <button class="nav-chevron" type="button" aria-label="Explorar Regalos" aria-controls="nav-dropdown-regalos" aria-expanded="false"><svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3.5 6 4.5 4 4.5-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-dropdown" id="nav-dropdown-regalos" hidden>
+        <span class="nav-dropdown-kicker">PARA CADA OCASIÓN</span>
+        <a href="regalos.html#propuestas">Todos los regalos<span aria-hidden="true">↗</span></a>
+        <a href="regalos.html#regalos">Regalos personales<span aria-hidden="true">↗</span></a>
+        <a href="regalos.html#cestas">Cestas gourmet<span aria-hidden="true">↗</span></a>
+        <a href="regalos.html#instituciones">Empresas e instituciones<span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <a class="nav-discovery" href="index.html#descubri">Tu alfajor ideal <span aria-hidden="true">↗</span></a>
+  </nav>
     <div class="nav-actions">
       <a class="icon-btn" href="index.html#alfajores" aria-label="Explorar el catálogo de alfajores" title="Ver alfajores">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.6" cy="10.6" r="6.8"/><path d="m16 16 5 5"/></svg>
@@ -34,11 +67,47 @@
       </button>
     </div>
   </div>
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" hidden>
-    <a href="index.html">Alfajores y dulces</a>
-    <a href="delicatessen.html">Delicatessen</a>
-    <a href="regalos.html">Regalos, cestas e instituciones</a>
-    <a href="rosario.html" aria-current="page">Rosario express</a>
+  <nav id="mobile-nav" class="mobile-nav mokka-mobile-nav" aria-label="Navegación móvil" hidden>
+    <div class="mobile-nav-group">
+      <div class="mobile-nav-row">
+        <a href="index.html" class="mobile-nav-main">Alfajores</a>
+        <button class="mobile-nav-chevron" type="button" aria-controls="mobile-dropdown-alfajores" aria-expanded="false" aria-label="Mostrar opciones de Alfajores"><svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3.5 6 4.5 4 4.5-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div id="mobile-dropdown-alfajores" class="mobile-nav-dropdown" hidden>
+        <a href="index.html#marcas">Todas las marcas</a>
+        <a href="index.html#alfajores">Ver todos los alfajores</a>
+        <a href="index.html?marca=Merengo#alfajores">Merengo</a>
+        <a href="index.html?marca=Zafarrancho#alfajores">Zafarrancho</a>
+        <a href="index.html?marca=Saboreé#alfajores">Saboreé</a>
+      </div>
+    </div>
+    <div class="mobile-nav-group">
+      <div class="mobile-nav-row">
+        <a href="delicatessen.html" class="mobile-nav-main">Delicatessen</a>
+        <button class="mobile-nav-chevron" type="button" aria-controls="mobile-dropdown-delicatessen" aria-expanded="false" aria-label="Mostrar opciones de Delicatessen"><svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3.5 6 4.5 4 4.5-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div id="mobile-dropdown-delicatessen" class="mobile-nav-dropdown" hidden>
+        <a href="delicatessen.html#catalogo-deli">Todos los productos</a>
+        <a href="delicatessen.html?categoria=bocaditos#catalogo-deli">Bocaditos</a>
+        <a href="delicatessen.html?categoria=chocolates#catalogo-deli">Bañados en chocolate</a>
+        <a href="delicatessen.html?categoria=dulces#catalogo-deli">Dulce de leche</a>
+        <a href="delicatessen.html#zafarrancho">Modo Zafarrancho</a>
+      </div>
+    </div>
+    <div class="mobile-nav-group">
+      <div class="mobile-nav-row">
+        <a href="regalos.html" class="mobile-nav-main">Regalos</a>
+        <button class="mobile-nav-chevron" type="button" aria-controls="mobile-dropdown-regalos" aria-expanded="false" aria-label="Mostrar opciones de Regalos"><svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3.5 6 4.5 4 4.5-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div id="mobile-dropdown-regalos" class="mobile-nav-dropdown" hidden>
+        <a href="regalos.html#propuestas">Todos los regalos</a>
+        <a href="regalos.html#regalos">Regalos personales</a>
+        <a href="regalos.html#cestas">Cestas gourmet</a>
+        <a href="regalos.html#instituciones">Empresas e instituciones</a>
+      </div>
+    </div>
+    <a class="mobile-nav-discovery" href="index.html#descubri">Tu alfajor ideal <span aria-hidden="true">↗</span></a>
+    <a class="mobile-nav-rosario" href="rosario.html">Entrega express en Rosario <span aria-hidden="true">↗</span></a>
   </nav>
 </header>
 
