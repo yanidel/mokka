@@ -70,11 +70,12 @@
  });
  document.addEventListener("keydown",event=>{
    if(event.key==="Escape"){
+     const group=document.activeElement?.closest(".nav-dropdown")?.closest(".nav-group");
+     const wasMobileFocus=!!document.activeElement?.closest("#mobile-nav");
      closeDesktop();
      setMobileMenu(false);
-     if(document.activeElement?.closest(".nav-dropdown")){
-       document.activeElement.closest(".nav-group")?.querySelector(".nav-chevron")?.focus();
-     }
+     if(group)group.querySelector(".nav-chevron")?.focus();
+     else if(hamburger&&wasMobileFocus)hamburger.focus();
    }
  });
  window.addEventListener("resize",()=>{
