@@ -19,6 +19,18 @@ Tienda de alfajores y delicatessen: prototipo **HTML/CSS/JavaScript** independie
 - [Ver precios, referencias y categorías para crear en Tiendanube](DELICATESSEN_MERENGO.md). La categoría oficial de Merengo *Pan dulces y budines* no presenta productos actuales publicados y por eso no se agregaron SKUs estacionales inventados.
 - Solo se usa WhatsApp en la página Regalos; todos los pedidos del resto se realizarán mediante Tiendanube cuando esté conectado.
 
+## Navegación principal renovada (noviembre de 2026)
+
+El encabezado de las **seis páginas** tiene tres accesos principales —**Alfajores, Delicatessen y Regalos**— con sus enlaces desplegables. El botón **Tu alfajor ideal ↗** es una CTA azul marino separada del resto. En teléfonos, el menú hamburguesa incluye las tres categorías con acordeones, la CTA y un enlace discreto a **Entrega express en Rosario**.
+
+- `navigation.js` gestiona la apertura y cierre por hover/foco/clic en escritorio; botones de acordeón en móvil; cierre con Escape, fuera del menú y al navegar, y atributos `aria-expanded`.
+- Los nombres principales siguen siendo **enlaces directos** a su landing (`index.html`, `delicatessen.html`, `regalos.html`); las flechas independientes abren los submenús. Sin menús muertos.
+- **Alfajores:** marcas, catálogo y marcas específicas. `app.js` acepta `?marca=Merengo`, `?marca=Zafarrancho` o `?marca=Saboreé` y activa el filtro al entrar. Cambiar/restablecer la marca actualiza la URL sin perder parámetros de campaña.
+- **Delicatessen:** filtros de Bocaditos, Bañados en chocolate, Dulce de leche y Modo Zafarrancho. `delicatessen.js` ya interpreta `?categoria=...`.
+- **Regalos:** regalos personales, cestas gourmet, empresas e instituciones, y todas las propuestas.
+- `app.js` y `pages.js` ya no agregan listeners duplicados al menú hamburguesa. Se utiliza el mismo menú compartido en ambas familias de páginas.
+- La franja existente de Rosario permanece independiente. El WhatsApp solo sigue apareciendo en Regalos.
+
 ## Navegación del sitio (noviembre de 2026)
 
 Tres páginas HTML separadas con navegación compartida en escritorio y móvil:
