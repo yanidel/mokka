@@ -73,13 +73,11 @@ $("#search-toggle").addEventListener("click",()=>showSearch($("#search-box").hid
 $("#search-close").addEventListener("click",()=>showSearch(false));
 $("#site-search").addEventListener("input",e=>{searchFilter=e.target.value.trim();renderProducts();});
 $("#site-search").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();scrollCatalog();}});
-$("#menu-toggle").addEventListener("click",()=>{$("#mobile-nav").hidden=!$("#mobile-nav").hidden;});
-$$("#mobile-nav a").forEach(a=>a.addEventListener("click",()=>{$("#mobile-nav").hidden=true;}));
 function showCart(open){$("#cart-drawer").classList.toggle("open",open);$("#cart-drawer").setAttribute("aria-hidden",String(!open));$("#cart-backdrop").hidden=!open;document.body.style.overflow=open?"hidden":"";}
 $$(".cart-toggle").forEach(b=>b.addEventListener("click",()=>showCart(true)));
 $("#cart-close").addEventListener("click",()=>showCart(false));
 $("#cart-backdrop").addEventListener("click",()=>showCart(false));
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){showCart(false);showSearch(false);$("#mobile-nav").hidden=true;}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){showCart(false);showSearch(false);}});
 $("#demo-checkout").textContent="Cerrar mi selección";
 $("#demo-checkout").addEventListener("click",()=>showCart(false));
 $("#newsletter").addEventListener("submit",e=>{e.preventDefault();$("#news-status").textContent="Formulario ilustrativo: no se guardan ni envían datos.";e.target.reset();});
